@@ -1,0 +1,68 @@
+
+/* Research page: shared palette, editorial alternating sections */
+.research-hero{padding:64px 0 29px;max-width:850px}
+.research-hero h1{font-size:clamp(49px,6vw,78px);margin:12px 0 19px}
+.research-hero h1 .accent-dot{display:inline}
+.accent-dot{color:var(--accent)}
+.research-lead{font-family:'Manrope',sans-serif;font-size:clamp(21px,2.1vw,29px);font-weight:600;line-height:1.45;letter-spacing:-.6px;margin:0 0 16px;max-width:830px}
+.research-sublead{margin:0;max-width:740px;font-size:14.5px;line-height:1.8;color:var(--muted)}
+.research-index{display:flex;gap:9px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:19px 0;margin-bottom:4px}
+.research-index>span{font-size:10px;letter-spacing:1.3px;font-weight:800;color:var(--accent-ink);margin-right:10px}
+.research-index a{background:var(--panel);border:1px solid var(--border);padding:8px 12px;border-radius:999px;font-size:11px;font-weight:700;color:var(--muted)}
+.research-index a:hover{color:var(--accent-ink);border-color:var(--accent)}
+.research-area{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:clamp(26px,4.2vw,60px);border-bottom:1px solid var(--border);padding:56px 0;scroll-margin-top:24px}
+.research-area:nth-child(even) .area-art{order:2}
+.research-area:nth-child(even) .area-copy{order:1}
+.area-art{overflow:hidden;border:1px solid var(--border);border-radius:9px;box-shadow:0 14px 28px rgba(25,43,37,.045);aspect-ratio:2/1;background:var(--panel)}
+.area-art img{width:100%;height:100%;object-fit:cover;display:block}
+html[data-theme="dark"] .area-art img{filter:brightness(.8) saturate(.78)}
+.area-label{color:var(--accent-ink);font-size:10px;letter-spacing:1.55px;font-weight:800}
+.area-copy h2{font-size:clamp(24px,2.5vw,35px);margin:12px 0 13px;letter-spacing:-.8px;line-height:1.2}
+.area-copy>p{font-size:14px;color:var(--muted);line-height:1.85;margin:0}
+.area-related{display:flex;flex-direction:column;gap:8px;margin-top:19px;border-top:1px solid var(--border);padding-top:15px}
+.area-related-title{font-size:10px;letter-spacing:1.2px;font-weight:800;color:var(--subtle);text-transform:uppercase;margin-bottom:1px}
+.area-related a{color:var(--accent-ink);font-size:12px;font-weight:700;line-height:1.5}
+.area-related a:hover{text-decoration:underline;text-underline-offset:3px}
+.area-related>span{font-size:12px;color:var(--muted)}
+.research-projects{padding-top:53px}
+.research-projects .section-title-row{margin-top:12px;margin-bottom:20px}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.project-item{border:1px solid var(--border);border-radius:9px;background:var(--panel);padding:24px;min-height:195px;display:flex;flex-direction:column;align-items:flex-start}
+.project-meta{font-size:10px;color:var(--accent-ink);letter-spacing:1.1px;font-weight:800}
+.project-item h3{margin:9px 0 8px;font-size:22px}
+.project-item p{font-size:12.5px;line-height:1.7;color:var(--muted);margin:0}
+.project-role{font-size:11px;color:var(--subtle);margin-top:14px;font-weight:650}
+.project-item>a{font-size:12px;color:var(--accent-ink);font-weight:750;margin-top:8px}
+.research-outro{display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:28px;margin-top:52px}
+.research-outro p{margin:0 auto 0 0;font-weight:700}
+.research-outro a{font-size:12px;color:var(--accent-ink);font-weight:800}
+@media(max-width:1100px){.research-area{gap:25px}.area-copy>p{font-size:13px}.area-art{aspect-ratio:2/1}}
+@media(max-width:800px){.research-area{grid-template-columns:1fr;gap:20px;padding:32px 0}.research-area:nth-child(even) .area-art,.research-area:nth-child(even) .area-copy{order:initial}.area-art{aspect-ratio:2/1;max-height:none}.research-hero{padding:35px 0 26px}.research-index>span{flex-basis:100%}}
+@media(max-width:660px){.research-index a{font-size:10px;padding:7px 10px}.research-lead{font-size:21px}.research-sublead{font-size:13px}.area-art{aspect-ratio:2/1}.project-grid{grid-template-columns:1fr}.research-projects{padding-top:32px}.research-outro{align-items:flex-start;gap:12px}}
+
+/* v1.8: quick section navigation and projects with institution identification */
+.research-index{margin-bottom:15px;gap:13px}
+.research-index>span{margin-right:8px}
+.research-index .research-jump{display:inline-flex;align-items:center;justify-content:center;min-width:105px;font-size:12px;letter-spacing:.1px;color:var(--accent-ink);background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:10px 15px}
+.research-index .research-jump:hover{border-color:var(--accent);background:var(--accent-soft)}
+.research-area-list,.research-projects{scroll-margin-top:30px}
+.research-projects{border-top:1px solid var(--border);margin-top:28px}
+.project-item{min-height:235px;padding:24px;position:relative}
+.project-heading-row{display:flex;gap:17px;align-items:center;width:100%;margin-bottom:12px}
+.project-logo{width:96px;height:84px;min-width:96px;background:white;display:flex;align-items:center;justify-content:center;border:1px solid #e2e5e3;border-radius:7px;padding:10px;position:relative;overflow:hidden}
+.project-logo img{display:block;max-width:100%;max-height:100%;object-fit:contain;position:relative;z-index:2}
+.project-logo-fallback{position:absolute;color:#57645f;font-size:12px;font-weight:850;letter-spacing:1.3px;text-align:center;z-index:0}
+.project-heading-copy{min-width:0}
+.project-heading-copy h3{font-size:26px;margin:6px 0 0;letter-spacing:-.5px}
+.project-acronym{font-size:.48em;font-weight:650;color:var(--subtle);letter-spacing:0;vertical-align:baseline;margin-left:8px}
+.project-item .project-meta{font-size:10px;letter-spacing:.7px}
+.project-item p{font-size:13px;line-height:1.75}
+.project-role{margin-top:auto;padding-top:15px}
+@media(max-width:900px){.project-heading-row{gap:12px}.project-logo{min-width:75px;width:75px;height:75px;padding:7px}.project-heading-copy h3{font-size:22px}}
+@media(max-width:660px){.research-index>span{flex-basis:auto;margin-right:0}.research-index .research-jump{min-width:92px}.project-logo{min-width:88px;width:88px}}
+
+/* v1.16: distinctive research navigation icons */
+.nav-special-icon{width:18px;height:18px;object-fit:contain;display:block;flex:0 0 18px;}
+html[data-theme="dark"] .nav-special-icon{filter:brightness(0) saturate(100%) invert(68%) sepia(31%) saturate(463%) hue-rotate(108deg)}
+.paine-nav-icon{width:18px;height:18px;flex:0 0 18px}
+

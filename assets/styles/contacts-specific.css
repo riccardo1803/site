@@ -1,0 +1,54 @@
+
+
+.pub-tags .topic-tag{background:transparent!important;border:1.3px solid var(--tag-fg)!important;color:var(--tag-fg)!important}
+.tag-geometry{--tag-fg:#16866d!important}.tag-motifs{--tag-fg:#7854b9!important}.tag-scale-free{--tag-fg:#316bc3!important}.tag-inference{--tag-fg:#bc467d!important}.tag-community{--tag-fg:#ba5c45!important}.tag-algorithms{--tag-fg:#a87311!important}.tag-modeling{--tag-fg:#147e9c!important}.tag-rare-events{--tag-fg:#a43f4b!important}.tag-temporal{--tag-fg:#5667b0!important}
+html[data-theme="dark"] .tag-geometry{--tag-fg:#72d7b4!important}html[data-theme="dark"] .tag-motifs{--tag-fg:#ba9cf7!important}html[data-theme="dark"] .tag-scale-free{--tag-fg:#8bb7ff!important}html[data-theme="dark"] .tag-inference{--tag-fg:#f89bc5!important}html[data-theme="dark"] .tag-community{--tag-fg:#ffa48e!important}html[data-theme="dark"] .tag-algorithms{--tag-fg:#edc271!important}html[data-theme="dark"] .tag-modeling{--tag-fg:#73c9e4!important}html[data-theme="dark"] .tag-rare-events{--tag-fg:#f18f9b!important}html[data-theme="dark"] .tag-temporal{--tag-fg:#abb7fa!important}
+
+
+
+/* v1.17 — Unified sidebar icon tint; uploaded SVG remains full-color elsewhere */
+.nav-link .nav-special-icon {display:block;flex:0 0 18px;width:18px;height:18px;background-color:var(--muted);
+  -webkit-mask:url("../interactive-papers-icon.svg") center / contain no-repeat;
+  mask:url("../interactive-papers-icon.svg") center / contain no-repeat;
+  filter:none!important;}
+html[data-theme="dark"] .nav-link .nav-special-icon{filter:none!important;}
+
+
+
+/* v1.17 QA: narrow-view navigation preserves current breadcrumb and appearance controls. */
+@media(max-width:360px){
+  .topbar{padding-left:10px;padding-right:10px;gap:5px;}
+  .breadcrumbs{flex:0 1 auto;min-width:0;gap:0;overflow:hidden;white-space:nowrap;letter-spacing:.5px;}
+  .breadcrumbs > a,.breadcrumbs > .slash{display:none;}
+  .breadcrumbs > span:last-child{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .top-actions{flex:0 0 auto;gap:0;}
+  .appearance-buttons button{min-width:29px;padding-left:6px;padding-right:6px;}
+}
+
+/* Contacts / deliberately spare extension of Network Studio. */
+.contact-page{max-width:900px;margin:0 auto;padding:65px 0 86px}
+.contact-page .contact-eyebrow{font-size:10px;letter-spacing:1.7px;font-weight:800;color:var(--accent-ink);text-transform:uppercase}
+.contact-page h1{font-family:Manrope,'DM Sans',sans-serif;font-size:clamp(44px,5.7vw,69px);letter-spacing:-3px;line-height:1.07;margin:14px 0 19px}
+.contact-page h1 em{font-style:normal;color:var(--accent)}
+.contact-page .contact-lede{font-size:clamp(14px,1.55vw,17px);line-height:1.85;color:var(--muted);max-width:700px;margin:0 0 39px}
+.contact-panel{border-top:1px solid var(--border);padding:25px 0 29px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:23px}
+.contact-panel>h2{margin:0;font-size:10px;line-height:1.8;color:var(--subtle);letter-spacing:1.35px;text-transform:uppercase}
+.contact-panel-body{min-width:0}
+.contact-email-entry{display:flex;justify-content:space-between;align-items:center;gap:13px;padding:0 0 20px}
+.contact-email-entry+.contact-email-entry{border-top:1px solid var(--line);padding-top:20px}
+.contact-email-entry:last-child{padding-bottom:0}
+.contact-email-entry .contact-caption{color:var(--subtle);font-size:11px;margin-bottom:8px;font-weight:750}
+.contact-email-entry a{font-size:clamp(14px,1.7vw,18px);font-weight:750;color:var(--accent-ink);overflow-wrap:anywhere}
+.contact-email-entry a:hover,.contact-profile:hover{text-decoration:underline;text-underline-offset:4px}
+.contact-copy{border:1px solid var(--border);background:var(--panel);color:var(--muted);border-radius:8px;padding:9px 11px;cursor:pointer;font-size:11px;white-space:nowrap;flex-shrink:0}
+.contact-copy:hover{color:var(--accent-ink);border-color:var(--accent)}
+.contact-affiliation>strong{display:block;font-size:15px;margin-bottom:4px}
+.contact-affiliation .contact-place{color:var(--muted);font-size:12px}
+.contact-upcoming{margin-top:15px;padding:12px 15px;background:var(--accent-soft);border-radius:8px;color:var(--muted);font-size:12px;line-height:1.6}
+.contact-upcoming strong{color:var(--text)}
+.contact-profiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.contact-profile{border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 17px;font-size:13px;font-weight:700;background:var(--panel)}
+.contact-profile span:last-child{font-size:14px;color:var(--accent-ink)}
+.contact-profile:hover{border-color:var(--accent);color:var(--accent-ink)}
+.contact-footer{margin-top:35px}
+@media(max-width:680px){.contact-page{padding:36px 0 56px}.contact-page h1{letter-spacing:-1.8px}.contact-panel{grid-template-columns:1fr;gap:12px}.contact-profiles{grid-template-columns:1fr}.contact-email-entry a{font-size:14px}.contact-email-entry{align-items:center}.contact-copy{padding:8px}}

@@ -1,0 +1,491 @@
+{
+  "version": "1.12",
+  "last_reviewed": "2026-10-25",
+  "sort_default": "year",
+  "sort_options": [
+    "year",
+    "title"
+  ],
+  "topic_order": [
+    "Network Geometry",
+    "Subgraphs & Motifs",
+    "Scale-Free Networks",
+    "Detection & Inference",
+    "Community Structure",
+    "Graph Algorithms",
+    "Network Modeling",
+    "Rare Events"
+  ],
+  "topics_future": [
+    "Temporal Networks"
+  ],
+  "records": [
+    {
+      "id": "optimal-subgraphs",
+      "title": "Optimal subgraphs in geometric scale-free random graphs",
+      "year": 2026,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        },
+        {
+          "full_name": "Matthias Walter",
+          "display_name": "M. Walter",
+          "is_self": false
+        }
+      ],
+      "venue": "The Annals of Applied Probability",
+      "doi": "10.1214/26-AAP2301",
+      "title_url": "https://doi.org/10.1214/26-AAP2301",
+      "tags": [
+        "Subgraphs & Motifs",
+        "Network Geometry",
+        "Scale-Free Networks"
+      ],
+      "keywords": [
+        "subgraph counts",
+        "motifs",
+        "mixed-integer linear programming",
+        "optimal subgraphs",
+        "GIRG"
+      ],
+      "verified_source_url": "https://orcid.org/0000-0003-4642-8507",
+      "arxiv_id": "2404.14972",
+      "source_note": "2026 official journal publication; 2024 arXiv version merged",
+      "sort_date": "2026-08"
+    },
+    {
+      "id": "planted-clique",
+      "title": "Planted clique recovery in random geometric graphs",
+      "year": 2026,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Konstantin Avrachenkov",
+          "display_name": "K. Avrachenkov",
+          "is_self": false
+        },
+        {
+          "full_name": "Andrei Bobu",
+          "display_name": "A. Bobu",
+          "is_self": false
+        },
+        {
+          "full_name": "Nelly Litvak",
+          "display_name": "N. Litvak",
+          "is_self": false
+        },
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        }
+      ],
+      "venue": "Journal of Complex Networks",
+      "doi": "10.1093/comnet/cnag025",
+      "title_url": "https://doi.org/10.1093/comnet/cnag025",
+      "tags": [
+        "Detection & Inference",
+        "Network Geometry",
+        "Graph Algorithms"
+      ],
+      "keywords": [
+        "planted clique",
+        "recovery",
+        "anomaly detection",
+        "random geometric graphs",
+        "common neighbors"
+      ],
+      "verified_source_url": "https://academic.oup.com/comnet/article/14/4/cnag025/8204956",
+      "arxiv_id": "2510.12365",
+      "interactive_url": "interactive-papers/planted-cliques-rgg/",
+      "source_note": "Publisher lists four authors, unlike an anomalous ORCID contributor field",
+      "sort_date": "2026-07-06"
+    },
+    {
+      "id": "large-deviations",
+      "title": "Large deviations for subgraphs in inhomogeneous random graphs",
+      "year": 2026,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        },
+        {
+          "full_name": "Bert Zwart",
+          "display_name": "B. Zwart",
+          "is_self": false
+        }
+      ],
+      "venue": "Journal of Statistical Physics",
+      "doi": "10.1007/s10955-026-03647-6",
+      "title_url": "https://doi.org/10.1007/s10955-026-03647-6",
+      "tags": [
+        "Rare Events",
+        "Subgraphs & Motifs",
+        "Scale-Free Networks"
+      ],
+      "keywords": [
+        "large deviations",
+        "rare events",
+        "cliques",
+        "subgraph counts",
+        "hubs",
+        "inhomogeneous random graphs"
+      ],
+      "verified_source_url": "https://link.springer.com/article/10.1007/s10955-026-03647-6",
+      "arxiv_id": "2603.06261",
+      "sort_date": "2026-07"
+    },
+    {
+      "id": "localized-geometry",
+      "title": "Localized geometry detection in scale-free random graphs",
+      "year": 2026,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Gianmarco Bet",
+          "display_name": "G. Bet",
+          "is_self": false
+        },
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        }
+      ],
+      "venue": "Journal of Applied Probability",
+      "doi": "10.1017/jpr.2025.10038",
+      "title_url": "https://doi.org/10.1017/jpr.2025.10038",
+      "tags": [
+        "Detection & Inference",
+        "Network Geometry",
+        "Scale-Free Networks"
+      ],
+      "keywords": [
+        "geometric community",
+        "normalized triangles",
+        "hypothesis testing",
+        "scale-free graphs",
+        "network inference"
+      ],
+      "verified_source_url": "https://www.cambridge.org/core/journals/journal-of-applied-probability/article/localized-geometry-detection-in-scalefree-random-graphs/0F0E8DB98FFFF6436A663E5DAD8DEC9E",
+      "arxiv_id": "2303.02965",
+      "source_note": "Online first November 2025; journal issue volume 63(2) in 2026; displayed bibliographic year 2026",
+      "sort_date": "2026-06",
+      "first_online_date": "2025-11-04"
+    },
+    {
+      "id": "efficient-generation",
+      "title": "Efficient generation of expected-degree graphs via edge-arrivals",
+      "year": 2026,
+      "type": "Preprint",
+      "authors": [
+        {
+          "full_name": "Gianlorenzo D'Angelo",
+          "display_name": "G. D'Angelo",
+          "is_self": false
+        },
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        }
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arXiv.2604.21504",
+      "title_url": "https://doi.org/10.48550/arXiv.2604.21504",
+      "tags": [
+        "Graph Algorithms",
+        "Network Modeling"
+      ],
+      "keywords": [
+        "sampling",
+        "expected-degree graphs",
+        "graph generation",
+        "edge arrivals",
+        "Norros-Reittu",
+        "random graphs",
+        "efficient algorithms"
+      ],
+      "verified_source_url": "https://arxiv.org/abs/2604.21504",
+      "arxiv_id": "2604.21504",
+      "source_note": "No journal version confirmed as of 2026-10-25",
+      "sort_date": "2026-04-23"
+    },
+    {
+      "id": "homophily",
+      "title": "Homophily within and across groups",
+      "year": 2025,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Abbas K. Rizi",
+          "display_name": "A. K. Rizi",
+          "is_self": false
+        },
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        },
+        {
+          "full_name": "Mikko Kivelä",
+          "display_name": "M. Kivelä",
+          "is_self": false
+        }
+      ],
+      "venue": "Nature Communications",
+      "doi": "10.1038/s41467-025-66415-2",
+      "title_url": "https://doi.org/10.1038/s41467-025-66415-2",
+      "tags": [
+        "Community Structure",
+        "Network Modeling"
+      ],
+      "keywords": [
+        "homophily",
+        "within groups",
+        "across groups",
+        "social networks",
+        "percolation",
+        "maximum entropy"
+      ],
+      "verified_source_url": "https://www.nature.com/articles/s41467-025-66415-2",
+      "arxiv_id": "2412.07901",
+      "sort_date": "2025-12-13"
+    },
+    {
+      "id": "optimal-geometry",
+      "title": "Optimal network geometry detection for weak geometry",
+      "year": 2025,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        }
+      ],
+      "venue": "Physical Review E",
+      "doi": "10.1103/l6dm-zk46",
+      "title_url": "https://doi.org/10.1103/l6dm-zk46",
+      "tags": [
+        "Network Geometry",
+        "Detection & Inference"
+      ],
+      "keywords": [
+        "latent geometry",
+        "detection",
+        "weak geometry",
+        "mixed-integer linear programming",
+        "hyperbolic graphs"
+      ],
+      "verified_source_url": "https://journals.aps.org/pre/abstract/10.1103/l6dm-zk46",
+      "arxiv_id": "2502.08407",
+      "sort_date": "2025-07-18"
+    },
+    {
+      "id": "intersection-graphs",
+      "title": "Geometric random intersection graphs with general connection probabilities",
+      "year": 2024,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Maria Deijfen",
+          "display_name": "M. Deijfen",
+          "is_self": false
+        },
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        }
+      ],
+      "venue": "Journal of Applied Probability",
+      "doi": "10.1017/jpr.2024.18",
+      "title_url": "https://doi.org/10.1017/jpr.2024.18",
+      "tags": [
+        "Network Modeling",
+        "Network Geometry"
+      ],
+      "keywords": [
+        "random intersection graphs",
+        "spatial networks",
+        "percolation",
+        "degree distribution",
+        "Poisson processes"
+      ],
+      "verified_source_url": "https://www.cambridge.org/core/journals/journal-of-applied-probability/article/geometric-random-intersection-graphs-with-general-connection-probabilities/31891FDC96C82AA0EF2AEF8A80B73C41",
+      "arxiv_id": "2306.17507",
+      "sort_date": "2024-05-22"
+    },
+    {
+      "id": "phd-thesis",
+      "title": "The influence of geometry on scale-free random graphs",
+      "year": 2024,
+      "type": "Thesis",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        }
+      ],
+      "venue": "University of Twente",
+      "doi": "10.3990/1.9789036563574",
+      "title_url": "https://doi.org/10.3990/1.9789036563574",
+      "tags": [
+        "Network Geometry",
+        "Scale-Free Networks",
+        "Subgraphs & Motifs"
+      ],
+      "keywords": [
+        "PhD thesis",
+        "doctoral dissertation",
+        "GIRG",
+        "geometry detection",
+        "scale-free networks"
+      ],
+      "verified_source_url": "https://research.utwente.nl/en/publications/the-influence-of-geometry-on-scale-free-random-graphs/",
+      "thesis_level": "PhD",
+      "sort_date": "2024-12-02"
+    },
+    {
+      "id": "hyperbolic-geometry",
+      "title": "Detecting hyperbolic geometry in networks: why triangles are not enough",
+      "year": 2022,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Nelly Litvak",
+          "display_name": "N. Litvak",
+          "is_self": false
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        }
+      ],
+      "venue": "Physical Review E",
+      "doi": "10.1103/PhysRevE.106.054303",
+      "title_url": "https://doi.org/10.1103/PhysRevE.106.054303",
+      "tags": [
+        "Network Geometry",
+        "Detection & Inference",
+        "Subgraphs & Motifs"
+      ],
+      "keywords": [
+        "hyperbolic geometry",
+        "weighted triangles",
+        "clustering",
+        "geometry detection"
+      ],
+      "verified_source_url": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.054303",
+      "arxiv_id": "2206.01553",
+      "sort_date": "2022-11-08"
+    },
+    {
+      "id": "cliques-girg",
+      "title": "Cliques in geometric inhomogeneous random graphs",
+      "year": 2022,
+      "type": "Article",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        },
+        {
+          "full_name": "Clara Stegehuis",
+          "display_name": "C. Stegehuis",
+          "is_self": false
+        }
+      ],
+      "venue": "Journal of Complex Networks",
+      "doi": "10.1093/comnet/cnac002",
+      "title_url": "https://doi.org/10.1093/comnet/cnac002",
+      "tags": [
+        "Subgraphs & Motifs",
+        "Network Geometry",
+        "Scale-Free Networks"
+      ],
+      "keywords": [
+        "cliques",
+        "geometric inhomogeneous random graphs",
+        "phase transition",
+        "motifs"
+      ],
+      "verified_source_url": "https://academic.oup.com/comnet/article/10/1/cnac002/6523689",
+      "source_note": "Official journal issue in February 2022, not 2021",
+      "sort_date": "2022-02-09"
+    },
+    {
+      "id": "msc-thesis",
+      "title": "An algorithmic approach to the random spanning forests",
+      "year": 2020,
+      "type": "Thesis",
+      "authors": [
+        {
+          "full_name": "Riccardo Michielan",
+          "display_name": "R. Michielan",
+          "is_self": true
+        }
+      ],
+      "venue": "University of Padua",
+      "doi": null,
+      "title_url": "https://thesis.unipd.it/handle/20.500.12608/21922",
+      "tags": [
+        "Graph Algorithms",
+        "Network Modeling"
+      ],
+      "keywords": [
+        "MSc thesis",
+        "master thesis",
+        "spanning forests",
+        "loop-erased random walks",
+        "Wilson algorithm"
+      ],
+      "verified_source_url": "https://sites.google.com/view/rmichielan/research/works",
+      "thesis_level": "MSc",
+      "institution_url": "https://thesis.unipd.it/handle/20.500.12608/21922",
+      "source_note": "No DOI found; link title to Padua institutional archive",
+      "sort_date": "2020"
+    }
+  ]
+}

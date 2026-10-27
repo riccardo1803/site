@@ -1,0 +1,2 @@
+
+(function(){for(const b of document.querySelectorAll('.contact-copy'))b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1800);}catch(e){const a=document.createElement('textarea');a.value=b.dataset.copy;document.body.append(a);a.select();document.execCommand('copy');a.remove();b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1800);}})})();

@@ -1,0 +1,6 @@
+# On a GitHub Pages project URL this file is NOT at the hostname root.
+# Crawlers consult robots.txt at https://USERNAME.github.io/robots.txt.
+User-agent: *
+Allow: /
+
+Sitemap: https://riccardo1803.github.io/site/sitemap.xml

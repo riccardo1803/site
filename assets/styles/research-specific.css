@@ -1,0 +1,20 @@
+
+.paine-inline-link{color:var(--accent-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent)}
+
+/* v1.17 — Unified sidebar icon tint; uploaded SVG remains full-color elsewhere */
+.nav-link .nav-special-icon {display:block;flex:0 0 18px;width:18px;height:18px;background-color:var(--muted);
+  -webkit-mask:url("../interactive-papers-icon.svg") center / contain no-repeat;
+  mask:url("../interactive-papers-icon.svg") center / contain no-repeat;
+  filter:none!important;}
+html[data-theme="dark"] .nav-link .nav-special-icon{filter:none!important;}
+
+
+/* v1.17 QA: narrow-view navigation preserves current breadcrumb and appearance controls. */
+@media(max-width:360px){
+  .topbar{padding-left:10px;padding-right:10px;gap:5px;}
+  .breadcrumbs{flex:0 1 auto;min-width:0;gap:0;overflow:hidden;white-space:nowrap;letter-spacing:.5px;}
+  .breadcrumbs > a,.breadcrumbs > .slash{display:none;}
+  .breadcrumbs > span:last-child{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .top-actions{flex:0 0 auto;gap:0;}
+  .appearance-buttons button{min-width:29px;padding-left:6px;padding-right:6px;}
+}

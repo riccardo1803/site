@@ -1,0 +1,80 @@
+/* Network Studio · independent 3D carousel cards (PAiNe / Research) · v1.21 */
+.orbit-carousel{position:relative;isolation:isolate;scroll-margin-top:22px}
+.orbit-stage{position:relative;overflow:hidden;perspective:1300px;perspective-origin:50% 48%;min-height:390px;isolation:isolate;transition:height .35s ease;touch-action:pan-y}
+.orbit-stack{position:relative;width:100%;height:100%;transform:none!important;transform-style:preserve-3d;top:auto;left:auto;margin:0!important;transition:none!important}
+.orbit-stage .orbit-slide{box-sizing:border-box;display:block;position:absolute!important;top:20px!important;left:50%!important;right:auto!important;bottom:auto!important;width:min(77%,850px)!important;height:var(--orbit-slide-height,auto);margin:0!important;border:1px solid var(--border)!important;border-radius:13px!important;background:var(--panel)!important;transform-origin:50% 50%;backface-visibility:hidden;transition:transform .65s cubic-bezier(.2,.7,.16,1),opacity .5s ease,filter .5s ease,box-shadow .5s ease,border-color .5s ease;opacity:0;filter:blur(1px);box-shadow:0 11px 28px rgba(18,41,33,.045);pointer-events:none;overflow:hidden}
+.orbit-stage .orbit-slide.orbit-active{z-index:5;opacity:1;filter:none;pointer-events:auto;box-shadow:0 22px 50px rgba(14,40,32,.13);border-color:color-mix(in srgb,var(--accent) 32%,var(--border))!important}
+.orbit-stage .orbit-slide.orbit-neighbor{pointer-events:none;opacity:.52;filter:blur(.75px) saturate(.83);box-shadow:0 10px 22px rgba(20,40,32,.06)}
+.orbit-stage .orbit-slide.orbit-distant{pointer-events:none;opacity:0;filter:blur(2px)}
+.orbit-tabs{display:grid;grid-template-columns:repeat(var(--orbit-total,3),minmax(0,1fr));gap:8px;margin:0 auto 18px;width:min(100%,860px)}
+.orbit-tabs button{min-width:0;width:100%;cursor:pointer;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:10px 8px;font:700 11px/1.35 'Manrope',sans-serif;color:var(--muted);transition:background .2s,border-color .2s,color .2s}
+.orbit-tabs button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+.orbit-tabs button:focus-visible,.orbit-actions button:focus-visible,.orbit-carousel:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.orbit-actions{display:flex;justify-content:center;align-items:center;gap:22px;padding:14px 0 1px}
+.orbit-actions button{width:40px;height:37px;cursor:pointer;border:1px solid var(--border);background:var(--panel);border-radius:8px;font-size:22px;color:var(--text)}
+.orbit-actions button:disabled{cursor:default;opacity:.32}
+.orbit-actions>span{font-size:11px;font-weight:800;min-width:64px;text-align:center;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+/* PAiNe: discard the hexagonal rotor geometry entirely. All three cards are separate and have exactly equal widths and measured heights. */
+.paine-orbit .paine-coverflow-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(100%,810px);gap:8px;margin:0 auto 18px}
+.paine-orbit .paine-coverflow-tabs button{min-width:0;width:100%}
+.paine-orbit .paine-prism-rotor,.paine-orbit .orbit-stack{transform:none!important;width:100%;height:100%}
+.paine-orbit .paine-coverflow-stage{perspective:1300px;min-height:390px}
+.paine-orbit .paine-coverflow-stage .orbit-slide{padding:25px 27px!important;transform:none;opacity:0!important;filter:blur(1px)!important;transition:transform .65s cubic-bezier(.2,.7,.16,1),opacity .5s ease,filter .5s ease,box-shadow .5s ease}
+.paine-orbit .paine-coverflow-stage .orbit-slide.orbit-active{opacity:1!important;filter:none!important}
+.paine-orbit .paine-coverflow-stage .orbit-slide.orbit-neighbor{opacity:.52!important;filter:blur(.75px) saturate(.83)!important}
+.paine-orbit .paine-coverflow-stage .orbit-slide.orbit-distant{opacity:0!important}
+.paine-orbit .paine-coverflow-actions{gap:22px;padding-top:13px}
+/* Research page: one complete research direction per slide, illustration alongside text, no alternating five-section wall. */
+.research-orbit{padding-top:33px;margin-bottom:26px;min-width:0}
+.research-orbit-heading{text-align:center;max-width:710px;margin:0 auto 22px}
+.research-orbit-heading h2{font-size:clamp(26px,3.1vw,38px);letter-spacing:-1.1px;margin:8px 0 9px}
+.research-orbit-heading p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
+.research-orbit-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0 auto 18px;width:min(100%,900px)}
+.research-orbit-tabs button{display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;cursor:pointer;width:100%;min-width:0;min-height:54px;background:var(--panel);border:1px solid var(--border);border-radius:8px;color:var(--muted);font:750 11px/1.4 'Manrope',sans-serif;transition:background .2s,color .2s,border-color .2s}
+.research-orbit-tabs button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.research-tab-number{font-size:10px;letter-spacing:1px;opacity:.72}
+.research-orbit-stage{min-height:450px}
+.research-orbit-stage .research-area{display:grid!important;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr)!important;gap:22px!important;align-items:center!important;min-width:0;padding:25px!important;border-bottom:0!important;scroll-margin-top:0}
+.research-orbit-stage .research-area:nth-child(even) .area-art,.research-orbit-stage .research-area:nth-child(even) .area-copy{order:initial!important}
+.research-orbit-stage .area-art{width:100%;aspect-ratio:5/4;max-height:360px;box-shadow:none}
+.research-orbit-stage .area-art img{width:100%;height:100%;object-fit:cover}
+.research-orbit-stage .area-copy{min-width:0}
+.research-orbit-stage .area-copy h2{font-size:clamp(22px,2.3vw,31px);margin:9px 0 9px}
+.research-orbit-stage .area-copy>p{font-size:12.5px;line-height:1.75}
+.research-orbit-stage .area-related{margin-top:12px;padding-top:11px;gap:6px}
+.research-orbit-stage .area-related a{font-size:11px;line-height:1.55}
+/* The controls must remain usable in all motion modes. */
+@media(max-width:850px){
+ .orbit-stage .orbit-slide{width:84%!important}
+ .research-orbit-stage .research-area{grid-template-columns:1fr!important;padding:19px!important;gap:16px!important;align-items:start!important}
+ .research-orbit-stage .area-art{aspect-ratio:2/1;max-height:220px}
+ .research-orbit-stage .area-copy h2{font-size:25px}
+ .research-orbit-stage .area-copy>p{font-size:12.5px}
+ .research-orbit-tabs{gap:5px}
+ .research-orbit-tabs button{font-size:10px;min-height:49px}
+}
+@media(max-width:600px){
+ .orbit-stage{perspective:900px;min-height:350px}
+ .orbit-stage .orbit-slide{width:88%!important;top:12px!important}
+ .paine-orbit .paine-coverflow-stage .orbit-slide{padding:17px!important}
+ .paine-orbit .paine-coverflow-tabs button{font-size:9.5px;padding:9px 5px}
+ .research-orbit{padding-top:23px}
+ .research-orbit-stage .research-area{padding:14px!important;gap:12px!important}
+ .research-orbit-stage .area-art{max-height:160px;aspect-ratio:2/1}
+ .research-orbit-stage .area-copy h2{font-size:23px}
+ .research-orbit-stage .area-copy>p{font-size:12px;line-height:1.68}
+ .research-orbit-stage .area-related a{font-size:10.5px}
+ .research-orbit-tabs{gap:4px}
+ .research-orbit-tabs button{padding:6px 2px;min-height:45px}
+ .research-tab-name{font-size:9px;overflow-wrap:anywhere}
+ .research-tab-number{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .orbit-stage,.orbit-stage .orbit-slide{transition:none!important;filter:none!important}
+ .orbit-stage .orbit-slide.orbit-neighbor{filter:none!important}
+}
+/* Accessible no-script state shows the first complete panel. */
+.orbit-carousel:not(.orbit-ready) .orbit-stage{height:auto!important;min-height:0;overflow:visible}
+.orbit-carousel:not(.orbit-ready) .orbit-stack{position:static;height:auto!important}
+.orbit-carousel:not(.orbit-ready) .orbit-slide{position:relative!important;right:auto!important;bottom:auto!important;left:auto!important;top:auto!important;transform:none!important;opacity:1!important;filter:none!important;width:100%!important;height:auto!important}
+.orbit-carousel:not(.orbit-ready) .orbit-slide:not(:first-child){display:none!important}
