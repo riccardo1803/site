@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html data-theme="system" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="Riccardo Michielan" name="author"/>
+<meta content="Interactive Papers by Riccardo Michielan: explore mathematical research through interactive laboratories, simulations, and two reading modes." name="description"/>
+<script>/* Set the saved appearance before rendering to avoid a flash. */
+  (function(){var a='system';try{a=localStorage.getItem('ir-appearance')||localStorage.getItem('rm-site-appearance')||'system';}catch(e){}if(!['system','light','dark'].includes(a))a='system';var dark=a==='dark'||(a==='system'&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.appearance=a;document.documentElement.dataset.theme=dark?'dark':'light';})();
+  </script>
+<meta content="#f6f8f7" name="theme-color"/>
+<link href="assets/favicon-auto.svg?v=124" id="site-favicon" rel="icon" type="image/svg+xml"/>
+<!-- SEO GENERATED: START -->
+<!-- SEO GENERATED: END -->
+<title>Interactive Papers — Riccardo Michielan</title>
+{{SITE_STYLES}}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sugina-dev/latin-modern-web@1.0.1/style/latinmodern-roman.css" media="all"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+<script>
+/* Only the Research Mode example uses TeX; the Simple Mode stays unchanged. */
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  },
+  svg: {fontCache: 'local'},
+  startup: {typeset: false}
+};
+</script>
+<script defer src="assets/vendor/mathjax/tex-svg.js"></script>
+<script defer src="assets/research-preview-tex.js"></script>
+</head>
+<body>
+{{SITE_ICONS}}
+<div class="shell">
+{{SITE_SIDEBAR}}
+<main class="main" id="top">
+{{SITE_TOPBAR}}
+<div class="content">
+<section aria-labelledby="ip-page-title" class="ip-hero">
+<div class="ip-logo-row"><div class="ip-logo-plate"><img alt="Interactive Papers — project logo" class="ip-full-lockup" decoding="async" loading="lazy" src="assets/interactive-papers-wordmark.png"/></div><span class="ip-collection-note">A growing collection</span></div>
+<p class="ip-slogan">DON'T JUST READ IT. EXPERIMENT.</p>
+<h1 id="ip-page-title">Explore the collection<span class="ip-period">.</span></h1>
+<div class="ip-intro"><p>Scientific papers don't have to be static. <strong>Interactive Papers</strong> is a growing collection of research articles that bring mathematical ideas to life through interactive laboratories, simulations, and hands-on experiments.</p>
+<p>Change parameters, test your intuition, and see how theoretical ideas translate into observable phenomena. Each experience is designed to make research more accessible without compromising its scientific depth.</p></div>
+</section>
+<section aria-labelledby="ip-modes-title" class="ip-section"><div class="ip-section-heading"><span class="ip-kicker">TWO WAYS TO EXPLORE</span><h2 class="v123-heading" id="ip-modes-title"><svg aria-hidden="true" class="section-heading-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-2 5-4 1 2-5z"></path></svg><span class="v123-heading-copy">Your way into the research.</span></h2><p>Whether you're simply curious or looking for the mathematical details, each interactive paper lets you explore at the level that suits you.</p></div>
+<div class="ip-mode-grid">
+<article aria-label="Simple mode preview" class="ip-mode simple"><div class="ip-mode-top"><div class="ip-mode-icon"><svg viewbox="0 0 24 24"><path d="M9 18h6m-5 3h4M9 14c-2-1.5-3.5-3.4-3.5-6A6.5 6.5 0 0 1 18.5 8c0 2.6-1.5 4.5-3.5 6l-.6 2H9.6L9 14Z"></path></svg></div><h3>Simple mode</h3></div><p class="ip-mode-sub">For curious minds.</p><p class="ip-mode-desc">Explore the main ideas through intuitive explanations, guided experiments, and interactive visualizations. No specialized background required.</p><div class="ip-example"><span class="ip-example-eyebrow">THE INTUITION</span><h4>What is a clique?</h4><p>Imagine four people who all know each other. In a network, this is a <strong>clique</strong>: every pair of nodes is connected. Pick any two people in that group: you will always find a direct connection between them. No links are missing.</p><svg aria-label="Clique on four nodes: all six possible connections are present" class="ip-clique-preview" role="img" viewbox="0 0 180 125"><desc>Complete graph K4 with four vertices and the six edges AB, AC, AD, BC, BD and CD.</desc><g stroke="currentColor" stroke-linecap="round" stroke-opacity=".70" stroke-width="2"><line x1="90" x2="29" y1="10" y2="104"></line><line x1="29" x2="151" y1="104" y2="104"></line><line x1="151" x2="90" y1="104" y2="10"></line><line x1="90" x2="90" y1="10" y2="68"></line><line x1="29" x2="90" y1="104" y2="68"></line><line x1="151" x2="90" y1="104" y2="68"></line></g><g fill="currentColor"><circle cx="90" cy="10" r="6.3"></circle><circle cx="29" cy="104" r="6.3"></circle><circle cx="151" cy="104" r="6.3"></circle><circle cx="90" cy="68" r="6.3"></circle></g></svg><p class="ip-graph-caption">4 nodes · 6 edges · every pair connected</p></div></article>
+<article aria-label="Research mode preview" class="ip-mode research">
+  <div class="ip-mode-top"><div class="ip-mode-icon"><svg viewbox="0 0 24 24"><path d="M12 6c-3-2.7-6-2.7-9-2v15c3-.7 6-.7 9 2 3-2.7 6-2.7 9-2V4c-3-.7-6-.7-9 2ZM12 6v15"></path></svg></div><h3>Research mode</h3></div>
+  <p class="ip-mode-sub">For deeper exploration.</p>
+  <p class="ip-mode-desc">Dive into mathematical formulations, assumptions, and theoretical results, with interactive experiments that complement rigorous reasoning.</p>
+  <div class="ip-example" id="ip-research-example">
+    <span class="ip-example-eyebrow">THE FORMALISM</span>
+    <h4>What is a clique?</h4>
+    <p>Let $G=(V,E)$ be a simple undirected graph. A subset $S\subseteq V$ is a clique when every pair of its vertices is joined by an edge.</p>
+    <div aria-label="Mathematical definition of a clique" class="ip-clique-math" role="group">
+      <div class="ip-math-tex-display">\[
+        \left|E(G[S])\right|=\binom{|S|}{2}
+      \]</div>
+      <p class="ip-math-explain">For four vertices, this means exactly six edges.</p>
+      <div class="ip-math-tex-display">\[
+        \binom{4}{2}=6
+      \]</div>
+    </div>
+  </div>
+</article>
+</div><p class="ip-mode-note">Choose your level of depth and switch between the two approaches as you explore each paper. The reading-mode controls appear inside the articles, not on this page.</p></section>
+<section aria-labelledby="ip-collection-title" class="ip-section ip-collection" id="collection"><div class="ip-section-heading"><span class="ip-kicker">THE COLLECTION</span><h2 class="v123-heading" id="ip-collection-title"><svg aria-hidden="true" class="section-heading-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65" viewbox="0 0 24 24"><path d="m5 3 13 9-6 1-3 6-4-16zM17 17l3 3M19 5l1-2M3 15l-2 1"></path></svg><span class="v123-heading-copy">Interactive articles</span></h2><p>One experiment to start with, more to come. Each paper combines research, interactive laboratories, and opportunities to investigate the underlying ideas.</p></div>
+<div class="ip-catalog">
+<!-- GENERATED INTERACTIVE CARDS: START -->
+<!-- GENERATED INTERACTIVE CARDS: END -->
+<article aria-label="Maximum overlap of random regular graphs — coming soon" class="ip-article placeholder"><div class="ip-placeholder-art" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 9v14M9 16h14"></path></svg></div><div class="ip-article-copy ip-placeholder-copy"><p class="ip-article-meta">INTERACTIVE PAPER</p><h3 class="ip-future-title">Maximum overlap of random regular graphs</h3><div class="ip-article-desc ip-placeholder-spacer" aria-hidden="true"></div><div class="ip-article-actions"><span class="ip-open-cta ip-coming-soon"><span class="ip-brand-icon ip-cta-icon" aria-hidden="true"></span>Coming soon</span></div></div></article>
+<article aria-label="Detecting hyperbolic geometry in networks — coming soon" class="ip-article placeholder"><div class="ip-placeholder-art" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 9v14M9 16h14"></path></svg></div><div class="ip-article-copy ip-placeholder-copy"><p class="ip-article-meta">INTERACTIVE PAPER</p><h3 class="ip-future-title">Detecting hyperbolic geometry in networks</h3><div class="ip-article-desc ip-placeholder-spacer" aria-hidden="true"></div><div class="ip-article-actions"><span class="ip-open-cta ip-coming-soon"><span class="ip-brand-icon ip-cta-icon" aria-hidden="true"></span>Coming soon</span></div></div></article></div>
+<p class="ip-footer-note">The collection will expand as new interactive papers become available.</p></section>
+{{SITE_FOOTER}}
+</div></main>
+</div>
+<script src="assets/site-shell.js"></script>
+</body>
+</html>
