@@ -183,14 +183,19 @@ html[data-theme="dark"] .contact-profile-brand .contact-brand-icon[src$="github.
 .pub-record-venue{font-style:italic!important;font-weight:760!important;}
 
 
-/* Interactive Papers — keep the original placeholder art, with actual future titles. */
+/* v1.27.7 — future papers retain the same cover, meta, title and footer structure
+   as the available card. Dashed outline and muted text still signal availability. */
 .ip-article.placeholder{border:2px dashed #a2aaa9!important;opacity:1;box-shadow:none;}
 html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
-.ip-article.placeholder .ip-placeholder-art{background:var(--sidebar);}
-.ip-article.placeholder .ip-placeholder-copy{display:flex;min-height:133px;gap:13px;}
-.ip-article.placeholder .ip-future-title{font-size:15.5px;line-height:1.45;letter-spacing:-.25px;
-  font-weight:690;color:var(--muted);margin:0;overflow-wrap:anywhere;}
-.ip-article.placeholder .ip-placeholder-copy p{font-size:11.5px;font-weight:660;color:var(--subtle);margin:auto 0 0;}
+.ip-article.placeholder .ip-placeholder-art{aspect-ratio:1.66;background:var(--sidebar);border-bottom:1px solid var(--border);}
+.ip-article.placeholder .ip-placeholder-copy{padding:19px 18px 20px;display:flex;flex:1;flex-direction:column;gap:0;min-height:0;}
+.ip-article.placeholder .ip-article-meta{color:var(--subtle);margin:0 0 11px;font-size:10px;font-weight:800;letter-spacing:1.1px;}
+.ip-article.placeholder .ip-future-title{font-size:19px;line-height:1.35;letter-spacing:-.55px;font-weight:700;color:var(--muted);margin:0 0 11px;overflow-wrap:break-word;}
+.ip-article.placeholder .ip-placeholder-spacer{flex:1;min-height:0;margin:0 0 22px;}
+.ip-article.placeholder .ip-article-actions{border-top:1px solid var(--line);padding-top:15px;}
+.ip-article.placeholder .ip-coming-soon{display:inline-flex;align-items:center;width:auto;height:auto;opacity:1;background:transparent;border-radius:0;font-size:12px;line-height:18px;font-weight:800;color:var(--subtle);}
+@media(max-width:1160px){.ip-article.placeholder .ip-future-title{font-size:17px;}}
+@media(max-width:690px){.ip-article.placeholder .ip-future-title{font-size:19px;}}
 /* A little extra room for the longer Simple example, without clipping math. */
 .ip-mode .ip-example{min-height:246px;}
 .ip-mode .ip-example p{overflow-wrap:break-word;}
@@ -231,7 +236,7 @@ html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
   .about-education{margin-left:22px;padding-left:5px;}
   .about-education-entry{gap:8px;}
   .about-education-entry h4{font-size:12.6px;}
-  .ip-article.placeholder .ip-placeholder-copy{display:flex!important;min-height:110px;}
-  .ip-article.placeholder .ip-placeholder-art{aspect-ratio:3.6;}
+  .ip-article.placeholder .ip-placeholder-copy{display:flex!important;min-height:0;}
+  .ip-article.placeholder .ip-placeholder-art{aspect-ratio:1.66;}
   .ip-mode .ip-example{min-height:0;}
 }

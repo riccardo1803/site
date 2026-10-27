@@ -120,7 +120,7 @@
 <div class="paine-prose"><p>Randomness can produce surprisingly organized patterns. Dense groups, highly connected hubs, and localized communities may emerge naturally in complex networks, even without external intervention.</p><p>How can we distinguish these spontaneous structures from anomalies deliberately embedded in a network?</p><p><strong>PAiNe investigates the fundamental limits of detecting and recovering planted anomalies in random graphs.</strong> The surrounding network's geometry, heterogeneous connectivity and structural dependencies can make the same hidden structure easier—or harder—to identify.</p></div>
 <div aria-label="Difference between detection and recovery" class="paine-distinction"><article><span class="paine-distinction-index">DETECTION</span><strong>Is something unusual present?</strong><p>Determine whether a network contains a planted structure.</p></article><article><span class="paine-distinction-index">RECOVERY</span><strong>Which vertices form that structure?</strong><p>Identify the constituent vertices, possibly with partial or exact accuracy.</p></article></div>
 </div>
-<figure class="paine-regimes"><div class="paine-regimes-title">A question of statistical distinguishability</div><div class="paine-regime-pair"><div class="paine-regime"><div aria-hidden="true" class="paine-regime-symbol"><svg fill="none" viewbox="0 0 150 78"><g stroke="currentColor" stroke-opacity=".28" stroke-width="1.1"><path d="M9 18 39 40 74 13 111 20 140 52 95 66 39 40 13 66 74 13 95 66 111 20"></path></g><g stroke="#398a72" stroke-width="2"><path d="M39 40 74 13 95 66 39 40"></path></g><g fill="currentColor" fill-opacity=".5"><circle cx="9" cy="18" r="3"></circle><circle cx="111" cy="20" r="3"></circle><circle cx="140" cy="52" r="3"></circle><circle cx="13" cy="66" r="3"></circle></g><g fill="#398a72"><circle cx="39" cy="40" r="5"></circle><circle cx="74" cy="13" r="5"></circle><circle cx="95" cy="66" r="5"></circle></g></svg></div><div><strong>Recoverable regime</strong><p>A sufficiently distinctive signal can reveal the anomalous vertices.</p></div></div><div class="paine-regime"><div aria-hidden="true" class="paine-regime-symbol"><svg fill="none" viewbox="0 0 150 78"><g stroke="currentColor" stroke-opacity=".26" stroke-width="1.1"><path d="M9 18 39 40 74 13 111 20 140 52 95 66 39 40 13 66 74 13 95 66 111 20 9 18 95 66M111 20 39 40M13 66 111 20M140 52 39 40M74 13 140 52M13 66 74 13M9 18 111 20"></path></g><g fill="currentColor" fill-opacity=".45"><circle cx="9" cy="18" r="3"></circle><circle cx="111" cy="20" r="3"></circle><circle cx="140" cy="52" r="3"></circle><circle cx="13" cy="66" r="3"></circle><circle cx="39" cy="40" r="4"></circle><circle cx="74" cy="13" r="4"></circle><circle cx="95" cy="66" r="4"></circle></g></svg></div><div><strong>Non-recoverable regime</strong><p>Background fluctuations can obscure the location of a hidden structure.</p></div></div></div><figcaption>Conceptual illustration only: recovery thresholds depend on the model, its parameters, and the recovery criterion.</figcaption></figure>
+<figure class="paine-regimes"><div class="paine-regimes-title">A question of statistical distinguishability</div><div class="paine-regime-pair"><div class="paine-regime"><div aria-hidden="true" class="paine-regime-symbol"><svg fill="none" viewbox="0 0 150 78"><g stroke="currentColor" stroke-opacity=".28" stroke-width="1.1"><path d="M9 18 39 40 74 13 111 20 140 52 95 66 39 40 13 66 74 13 95 66 111 20"></path></g><g stroke="#398a72" stroke-width="2"><path d="M39 40 74 13 95 66 39 40"></path></g><g class="paine-regime-neutral-50"><circle cx="9" cy="18" r="3"></circle><circle cx="111" cy="20" r="3"></circle><circle cx="140" cy="52" r="3"></circle><circle cx="13" cy="66" r="3"></circle></g><g fill="#398a72"><circle cx="39" cy="40" r="5"></circle><circle cx="74" cy="13" r="5"></circle><circle cx="95" cy="66" r="5"></circle></g></svg></div><div><strong>Recoverable regime</strong><p>A sufficiently distinctive signal can reveal the anomalous vertices.</p></div></div><div class="paine-regime"><div aria-hidden="true" class="paine-regime-symbol"><svg fill="none" viewbox="0 0 150 78"><g stroke="currentColor" stroke-opacity=".26" stroke-width="1.1"><path d="M9 18 39 40 74 13 111 20 140 52 95 66 39 40 13 66 74 13 95 66 111 20 9 18 95 66M111 20 39 40M13 66 111 20M140 52 39 40M74 13 140 52M13 66 74 13M9 18 111 20"></path></g><g class="paine-regime-neutral-45"><circle cx="9" cy="18" r="3"></circle><circle cx="111" cy="20" r="3"></circle><circle cx="140" cy="52" r="3"></circle><circle cx="13" cy="66" r="3"></circle><circle cx="39" cy="40" r="4"></circle><circle cx="74" cy="13" r="4"></circle><circle cx="95" cy="66" r="4"></circle></g></svg></div><div><strong>Non-recoverable regime</strong><p>Background fluctuations can obscure the location of a hidden structure.</p></div></div></div><figcaption>Conceptual illustration only: recovery thresholds depend on the model, its parameters, and the recovery criterion.</figcaption></figure>
 </section>
 <section aria-labelledby="objectives-title" class="paine-section paine-slide orbit-slide" id="objectives"><div class="paine-section-head"><span class="small-overline">02 / RESEARCH GOALS</span><h2 id="objectives-title">Research Objectives<span class="accent-dot">.</span></h2><p class="paine-section-lead">Four objectives, one central question.</p></div>
 <div class="paine-objectives">
@@ -130,11 +130,63 @@
 <article><span>04</span><h3>Empirical validation</h3><p>Explore theoretical predictions through computational experiments and open, reproducible tools for network analysis.</p></article>
 </div>
 </section>
-<section aria-labelledby="approach-title" class="paine-section paine-slide orbit-slide" id="approach"><div class="paine-section-head"><span class="small-overline">03 / METHODOLOGY</span><h2 id="approach-title">Research Approach<span class="accent-dot">.</span></h2><p class="paine-section-lead">Model. Analyze. Recover.</p></div><p class="paine-wide-intro">PAiNe brings together probability theory, statistical inference, and graph algorithms to investigate the fundamental challenges of identifying hidden structures in complex networks. These complementary perspectives help separate what is statistically possible from what can be achieved computationally.</p><div class="paine-approach-steps">
-<article><div aria-hidden="true" class="paine-step-icon">A</div><h3>Probabilistic network models</h3><p>PAiNe investigates how characteristic features of complex networks influence the emergence, detection, and recovery of unusual patterns.</p></article>
-<article><div aria-hidden="true" class="paine-step-icon">B</div><h3>Fundamental limits of recovery</h3><p>Rigorous probabilistic analysis explores how to distinguish planted structures from natural fluctuations and what network information makes inference possible.</p></article>
-<article><div aria-hidden="true" class="paine-step-icon">C</div><h3>Algorithms and validation</h3><p>The project studies how statistical guarantees relate to computational feasibility, supported by numerical experiments and reproducible research. By connecting theory and computation, it aims to clarify which structural signals can be used reliably in complex networks.</p></article>
-</div></section>
+<section aria-labelledby="approach-title" class="paine-section paine-slide orbit-slide" id="approach">
+<div class="paine-section-head"><span class="small-overline">03 / METHODOLOGY</span><h2 id="approach-title">Research Approach<span class="accent-dot">.</span></h2><p class="paine-section-lead">From a network model to a testable recovery method.</p></div>
+<p class="paine-wide-intro paine-method-intro">The strategy follows three connected checkpoints. We first create a controlled comparison between random networks with and without a planted anomaly; then use probabilistic arguments to identify where the two become distinguishable; finally, we turn that insight into recovery procedures and test their performance. The process can be revisited as new structural effects emerge.</p>
+<div class="paine-method-route" aria-label="Three methodological checkpoints: construct, analyze, and test">
+  <article class="paine-method-stop">
+    <div class="paine-method-checkpoint"><span>A</span><small>CONSTRUCT</small></div>
+    <div class="paine-method-visual" role="img" aria-label="Two comparable random network samples: one without an anomaly, and the other with a small highlighted planted group">
+      <svg aria-hidden="true" viewBox="0 0 210 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="paine-method-lines"><path d="M14 32 38 16 66 32 57 66 26 81 14 32M14 32 57 66M38 16 26 81M66 32 26 81M123 32 147 16 175 32 167 66 135 81 123 32M123 32 167 66M147 16 135 81M175 32 135 81"/></g>
+        <g class="paine-method-pale"><circle cx="14" cy="32" r="4"/><circle cx="38" cy="16" r="4"/><circle cx="66" cy="32" r="4"/><circle cx="57" cy="66" r="4"/><circle cx="26" cy="81" r="4"/><circle cx="123" cy="32" r="4"/><circle cx="147" cy="16" r="4"/></g>
+        <path class="paine-method-signal" d="M175 32 167 66 135 81 175 32M175 32 135 81" />
+        <g class="paine-method-hot"><circle cx="175" cy="32" r="5.5"/><circle cx="167" cy="66" r="5.5"/><circle cx="135" cy="81" r="5.5"/></g>
+        <path class="paine-method-arrow" d="M87 49h24m-7-7 7 7-7 7" />
+        <path class="paine-method-soft-boundary" d="M130 51Q143 21 177 28Q190 60 169 85Q136 96 125 75Q119 63 130 51Z"/>
+      </svg>
+      <span class="paine-method-visual-note">BASELINE <span aria-hidden="true">→</span> PLANTED</span>
+    </div>
+    <h3>Build the comparison</h3>
+    <p>Sample networks with and without a planted structure, varying geometry and connectivity under controlled conditions.</p>
+  </article>
+  <article class="paine-method-stop">
+    <div class="paine-method-checkpoint"><span>B</span><small>ANALYZE</small></div>
+    <div class="paine-method-visual" role="img" aria-label="Overlapping distributions of a network statistic, with a dashed threshold marking their possible separation">
+      <svg aria-hidden="true" viewBox="0 0 210 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="paine-method-axis" d="M14 89H195M23 92V10"/>
+        <path class="paine-method-distribution-neutral" d="M25 89C46 88 48 36 79 31C109 26 115 86 145 89Z"/>
+        <path class="paine-method-distribution-signal" d="M67 89C101 87 109 29 142 23C173 19 177 85 192 89Z"/>
+        <path class="paine-method-threshold" d="M112 9V89"/>
+        <circle class="paine-method-threshold-dot" cx="112" cy="89" r="4"/>
+        <path class="paine-method-distribution-neutral-stroke" d="M25 89C46 88 48 36 79 31C109 26 115 86 145 89"/>
+        <path class="paine-method-distribution-signal-stroke" d="M67 89C101 87 109 29 142 23C173 19 177 85 192 89"/>
+      </svg>
+      <span class="paine-method-visual-note">RANDOM FLUCTUATIONS <span aria-hidden="true">/</span> SIGNAL</span>
+    </div>
+    <h3>Find the boundary</h3>
+    <p>Compare the planted and unplanted laws to derive bounds on when the hidden signal can be inferred.</p>
+  </article>
+  <article class="paine-method-stop">
+    <div class="paine-method-checkpoint"><span>C</span><small>TEST</small></div>
+    <div class="paine-method-visual" role="img" aria-label="A network is passed through a recovery procedure; the output identifies a small connected group of vertices and receives a verification check">
+      <svg aria-hidden="true" viewBox="0 0 210 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="paine-method-lines"><path d="M18 41 42 21 71 38 59 74 24 82 18 41M18 41 59 74M42 21 24 82M71 38 24 82M42 21 59 74"/></g>
+        <g class="paine-method-pale"><circle cx="18" cy="41" r="4"/><circle cx="42" cy="21" r="4"/><circle cx="71" cy="38" r="4"/><circle cx="59" cy="74" r="4"/><circle cx="24" cy="82" r="4"/></g>
+        <path class="paine-method-arrow" d="M90 51h20m-7-7 7 7-7 7"/>
+        <path class="paine-method-soft-boundary" d="M130 36Q143 18 171 26Q191 35 189 62Q188 91 163 94Q139 97 125 76Q120 53 130 36Z"/>
+        <path class="paine-method-signal" d="M140 69 153 35 177 70 140 69"/>
+        <g class="paine-method-hot"><circle cx="140" cy="69" r="6"/><circle cx="153" cy="35" r="6"/><circle cx="177" cy="70" r="6"/></g>
+        <circle class="paine-method-verification" cx="189" cy="15" r="12"/>
+        <path class="paine-method-check" d="m183 15 4 4 8-9"/>
+      </svg>
+      <span class="paine-method-visual-note">PROCEDURE <span aria-hidden="true">→</span> RECOVERED SET</span>
+    </div>
+    <h3>Recover and verify</h3>
+    <p>Implement recovery procedures, benchmark them in simulations, and compare their behavior with the theoretical bounds.</p>
+  </article>
+</div>
+</section>
 </div></div>
 <div class="paine-coverflow-actions"><button aria-label="Previous section" data-orbit-prev="" id="paine-coverflow-prev" type="button">←</button><span aria-live="polite" data-orbit-counter="" id="paine-coverflow-counter">01 / 03</span><button aria-label="Next section" data-orbit-next="" id="paine-coverflow-next" type="button">→</button></div>
 </div>

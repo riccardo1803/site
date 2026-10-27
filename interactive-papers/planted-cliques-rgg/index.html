@@ -12,7 +12,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Riccardo Michielan">
-<meta property="og:title" content="Planted Cliques in RGGs — Interactive Papers">
+<meta property="og:title" content="Planted Cliques in Random Geometric Graphs — Interactive Papers">
 <meta property="og:description" content="Explore planted clique recovery in random geometric graphs with interactive experiments and a rigorous research reading mode.">
 <meta property="og:url" content="https://riccardo1803.github.io/site/interactive-papers/planted-cliques-rgg/">
 <meta property="og:image" content="https://riccardo1803.github.io/site/assets/social/interactive-papers.png">
@@ -20,12 +20,12 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Explore planted clique recovery in random geometric graphs through interactive simulations and mathematical results.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Planted Cliques in RGGs — Interactive Papers">
+<meta name="twitter:title" content="Planted Cliques in Random Geometric Graphs — Interactive Papers">
 <meta name="twitter:description" content="Explore planted clique recovery in random geometric graphs with interactive experiments and a rigorous research reading mode.">
 <meta name="twitter:image" content="https://riccardo1803.github.io/site/assets/social/interactive-papers.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://riccardo1803.github.io/site/interactive-papers/planted-cliques-rgg/#webpage","url":"https://riccardo1803.github.io/site/interactive-papers/planted-cliques-rgg/","name":"Planted Cliques in RGGs — Interactive Papers","inLanguage":"en","author":{"@id":"https://riccardo1803.github.io/site/#riccardo-michielan"},"about":{"@type":"ScholarlyArticle","name":"Planted clique recovery in random geometric graphs","url":"https://doi.org/10.1093/comnet/cnag025","identifier":"https://doi.org/10.1093/comnet/cnag025","author":[{"@type":"Person","name":"Konstantin Avrachenkov"},{"@type":"Person","name":"Andrei Bobu"},{"@type":"Person","name":"Nelly Litvak"},{"@type":"Person","name":"Riccardo Michielan"}]}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://riccardo1803.github.io/site/interactive-papers/planted-cliques-rgg/#webpage","url":"https://riccardo1803.github.io/site/interactive-papers/planted-cliques-rgg/","name":"Planted Cliques in Random Geometric Graphs — Interactive Papers","inLanguage":"en","author":{"@id":"https://riccardo1803.github.io/site/#riccardo-michielan"},"about":{"@type":"ScholarlyArticle","name":"Planted clique recovery in random geometric graphs","url":"https://doi.org/10.1093/comnet/cnag025","identifier":"https://doi.org/10.1093/comnet/cnag025","author":[{"@type":"Person","name":"Konstantin Avrachenkov"},{"@type":"Person","name":"Andrei Bobu"},{"@type":"Person","name":"Nelly Litvak"},{"@type":"Person","name":"Riccardo Michielan"}]}}]}</script>
 <!-- SEO GENERATED: END -->
-<title>Planted Cliques in RGGs — Interactive Papers | Riccardo Michielan</title>
+<title>Planted Cliques in Random Geometric Graphs — Interactive Papers | Riccardo Michielan</title>
 <link href="../../assets/interactive-papers-icon.svg" rel="icon" type="image/svg+xml"/>
 <style>
     :root { --ink:#122d38; --sub:#5d7380; --teal:#167a85; --teal-dark:#0f5662; --coral:#e26b52; --paper:#f5f8f7; --line:#dce7e7; --white:#fff; --mist:#e6f3f2; --navy:#0c2531; --success:#197e60; --shadow:0 20px 60px rgba(12,44,56,.075); }
@@ -1243,13 +1243,49 @@ body {padding-bottom:calc(var(--ir-bottom-height) + env(safe-area-inset-bottom,0
 @media(prefers-reduced-motion:reduce){.ir-brand,.ir-back-to-catalog{transition:none}}
 
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sugina-dev/latin-modern-web@1.0.1/style/latinmodern-roman.css" media="all"/>
+<style id="research-latex-typography">
+/* LaTeX manuscript typography only in Research Mode: Simple Mode stays unchanged. */
+:root[data-reading-mode="research"] {
+  --ir-reading-serif:"Latin Modern Roman","LMRoman10","CMU Serif","Computer Modern","STIX Two Text",Georgia,serif;
+}
+:root[data-reading-mode="research"] body {
+  font-family:var(--ir-reading-serif);
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures;
+  letter-spacing:normal;
+}
+/* Match the Computer Modern prose to the pre-rendered MathJax (TeX) SVG equations. */
+:root[data-reading-mode="research"] :is(h1,h2,h3,h4,h5,h6),
+:root[data-reading-mode="research"] :is(.ir-science-card h3,.ir-results-heading h3,.ir-v21-model-title h3,.ir-proof-title,.ir-algo-heading span,.ir-v21-diagram h4,.ir-v21-refs-head h2,.ir-replacement h2) {
+  font-family:var(--ir-reading-serif);
+  letter-spacing:normal;
+  font-weight:700;
+}
+:root[data-reading-mode="research"] :is(.ir-research-content,.ir-v21-proof,.ir-v21-references,.ir-science-card,.ir-short-technical,.ir-symbol-guide) {
+  font-family:var(--ir-reading-serif);
+  letter-spacing:normal;
+}
+:root[data-reading-mode="research"] :is(.ir-science-card p,.ir-short-technical p,.ir-proof-body p,.ir-v21-case,.ir-algorithm ol li,.ir-algo-io,.ir-science-lead p,.ir-v21-refs-head p,.ir-v21-references li,.ir-symbol-guide) {
+  font-size:15px;
+  line-height:1.68;
+}
+:root[data-reading-mode="research"] .ir-science-card .ir-small,
+:root[data-reading-mode="research"] .ir-theory-foot {font-size:12.5px;}
+:root[data-reading-mode="research"] .ir-v21-references li {line-height:1.55;}
+/* Preserve true MathJax/TeX vector math; never approximate fractions or Greek symbols with prose fonts. */
+:root[data-reading-mode="research"] :is(.ir-equation,.ir-inline-equation) mjx-container {font-family:initial;}
+@media(max-width:500px) {
+  :root[data-reading-mode="research"] :is(.ir-science-card p,.ir-short-technical p,.ir-proof-body p,.ir-v21-case,.ir-algorithm ol li,.ir-algo-io,.ir-science-lead p,.ir-v21-refs-head p,.ir-v21-references li,.ir-symbol-guide) {font-size:14px;}
+}
+</style>
 </head>
 <body>
 <header class="shell topbar">
 <div class="ir-site-header-group">
   <a class="brand ir-brand" href="../../interactive-papers.html" aria-label="Interactive Papers — back to collection">
     <img class="ir-brand-symbol" src="../../assets/interactive-papers-icon.svg" alt="" aria-hidden="true"/>
-    <span class="ir-brand-words"><b>Interactive Papers</b><span class="ir-brand-project">/ Planted Cliques in RGGs</span></span>
+    <span class="ir-brand-words"><b>Interactive Papers</b><span class="ir-brand-project">/ Planted Cliques in Random Geometric Graphs</span></span>
   </a>
 </div>
 <a class="ir-back-to-catalog" href="../../interactive-papers.html" aria-label="Back to Interactive Papers collection">← <span>All interactive papers</span></a>

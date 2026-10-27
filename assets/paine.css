@@ -37,8 +37,12 @@ html[data-theme="dark"] .paine-hero-art{background:radial-gradient(circle at 58%
 .paine-regimes-title{color:var(--accent-ink);letter-spacing:1.15px;font-size:10px;text-transform:uppercase;font-weight:800;margin-bottom:12px}
 .paine-regime-pair{display:grid;grid-template-columns:1fr 1fr;gap:21px}
 .paine-regime{display:flex;align-items:center;gap:18px;min-width:0}
-.paine-regime-symbol{background:var(--accent-soft);width:135px;min-width:115px;border-radius:7px;padding:10px}
-.paine-regime-symbol svg{width:100%;height:auto;display:block}
+.paine-regime-symbol{background:var(--accent-soft);box-sizing:border-box;width:160px;min-width:135px;flex:0 1 160px;border-radius:7px;padding:6px}
+.paine-regime-symbol svg{width:100%;height:auto;display:block;shape-rendering:geometricPrecision}
+/* v1.27.4: fully opaque neutral nodes, preserving their former tones on the
+   actual accent-soft background. Edges remain behind filled circles. */
+.paine-regime-symbol .paine-regime-neutral-50{fill:var(--text);fill:color-mix(in srgb,currentColor 50%,var(--accent-soft) 50%)}
+.paine-regime-symbol .paine-regime-neutral-45{fill:var(--text);fill:color-mix(in srgb,currentColor 45%,var(--accent-soft) 55%)}
 .paine-regime strong{font-size:12.5px}
 .paine-regime p{font-size:11.5px;color:var(--muted);line-height:1.6;margin:5px 0 0}
 .paine-regimes figcaption{font-size:10px;color:var(--subtle);line-height:1.6;margin-top:17px}
@@ -137,7 +141,7 @@ html[data-theme="dark"] .paine-hero-art{background:radial-gradient(circle at 58%
 .paine-connect p{font-size:12.5px;line-height:1.7;color:var(--muted);margin:0;max-width:700px}
 .paine-connect .btn{white-space:nowrap;flex-shrink:0}
 @media(max-width:1080px){.paine-page .paine-hero{grid-template-columns:minmax(0,1fr) 300px;gap:25px}.paine-hero-art{min-height:310px}.tl-chart{grid-template-columns:143px minmax(0,1fr)}.tl-toolbar{padding:14px}.tl-side-row{padding-left:12px}}
-@media(max-width:800px){.paine-page .paine-hero{grid-template-columns:1fr;padding:35px 0 29px}.paine-hero-art{max-height:280px;min-height:220px}.paine-hero-art svg{max-height:260px;max-width:430px}.paine-challenge-grid{grid-template-columns:1fr;gap:12px}.paine-distinction{grid-template-columns:1fr 1fr}.paine-regime-pair{gap:12px}.paine-regime-symbol{min-width:76px;width:85px}.paine-approach-steps{gap:12px}.paine-info-grid{grid-template-columns:1fr}.tl-toolbar{flex-wrap:wrap}.tl-zoom-controls{margin-left:auto}}
+@media(max-width:800px){.paine-page .paine-hero{grid-template-columns:1fr;padding:35px 0 29px}.paine-hero-art{max-height:280px;min-height:220px}.paine-hero-art svg{max-height:260px;max-width:430px}.paine-challenge-grid{grid-template-columns:1fr;gap:12px}.paine-distinction{grid-template-columns:1fr 1fr}.paine-regime-pair{gap:12px}.paine-regime-symbol{min-width:0;width:150px;flex:0 0 150px;padding:6px}.paine-approach-steps{gap:12px}.paine-info-grid{grid-template-columns:1fr}.tl-toolbar{flex-wrap:wrap}.tl-zoom-controls{margin-left:auto}}
 @media(max-width:660px){.paine-hero h1{font-size:72px;letter-spacing:-4px}.paine-expanded{font-size:14px;margin-bottom:18px}.paine-hook{font-size:25px}.paine-intro{font-size:13.3px}.paine-page .paine-hero{padding:30px 0}.paine-hero-art{min-height:195px}.paine-subnav{gap:7px}.paine-subnav>span{width:100%}.paine-subnav a{padding:7px 9px;font-size:10px}.paine-section{padding-top:44px}.paine-section+.paine-section{margin-top:43px}.paine-section-head h2{font-size:27px}.paine-section-lead{font-size:13px}.paine-prose p{font-size:13px}.paine-distinction{grid-template-columns:1fr}.paine-regimes{padding:15px}.paine-regime-pair{grid-template-columns:1fr}.paine-objectives{grid-template-columns:1fr;gap:10px}.paine-objectives article{min-height:0;padding:19px}.paine-approach-steps{grid-template-columns:1fr;gap:20px}.paine-approach-steps article{padding-top:13px}.tl-toolbar{display:block;padding:13px}.tl-toolbar-left{justify-content:space-between;margin-bottom:14px}.tl-zoom-controls{justify-content:space-between;width:100%;gap:6px}.tl-zoom-controls input{flex:1;min-width:65px}.tl-zoom-controls label{font-size:10px}.tl-zoom-controls output{font-size:10px;min-width:56px}.tl-chart{grid-template-columns:111px minmax(0,1fr)}.tl-side-header{padding-left:8px}.tl-side-row{padding:25px 7px 0;font-size:10px}.tl-drag-hint{font-size:10px}.tl-footer{padding:11px 12px}.tl-caption{font-size:10px}.tl-legend{gap:12px}.tl-legend>span{font-size:10px}.paine-outcomes-placeholder{align-items:flex-start;flex-wrap:wrap;padding:16px}.paine-outcomes-placeholder a{margin-left:0;width:100%}.paine-facts{padding:6px 15px}.paine-facts>div{grid-template-columns:95px minmax(0,1fr);gap:10px}.paine-facts span{font-size:10px}.paine-facts strong{font-size:11px}.paine-connect{padding:23px;flex-direction:column;align-items:flex-start;gap:16px}.paine-connect h2{font-size:25px}}
 @media(prefers-reduced-motion:reduce){.tl-event{transition:none}}
 /* Prevent the inherited homepage h1 span rule from placing the accent dot on its own line. */
@@ -163,7 +167,7 @@ html[data-theme="dark"] .paine-hero-art{background:radial-gradient(circle at 58%
 .tl-side-outreach .tl-lane-icon{color:#af823f;background:color-mix(in srgb,#af823f 13%,var(--panel))}
 .tl-past-shade{position:absolute;top:0;left:0;height:309px;background:rgba(113,122,126,.075);pointer-events:none;z-index:1}.tl-now-marker{z-index:2}.tl-event{z-index:3}
 html[data-theme="dark"] .tl-past-shade{background:rgba(185,198,205,.05)}
-@media(max-width:800px){.paine-coverflow-stage .paine-slide{width:85%;padding:24px!important}.paine-slide .paine-challenge-grid{grid-template-columns:1fr}.paine-coverflow-stage .paine-slide .paine-regime-pair{grid-template-columns:1fr}.paine-coverflow-stage .paine-slide .paine-approach-steps{grid-template-columns:1fr;gap:15px}.paine-coverflow-stage .paine-slide .paine-objectives{grid-template-columns:1fr}.paine-slide .paine-regimes{padding:13px}.paine-slide .paine-regime{gap:12px}.paine-slide .paine-regime-symbol{width:72px;min-width:72px}}
+@media(max-width:800px){.paine-coverflow-stage .paine-slide{width:85%;padding:24px!important}.paine-slide .paine-challenge-grid{grid-template-columns:1fr}.paine-coverflow-stage .paine-slide .paine-regime-pair{grid-template-columns:1fr}.paine-coverflow-stage .paine-slide .paine-approach-steps{grid-template-columns:1fr;gap:15px}.paine-coverflow-stage .paine-slide .paine-objectives{grid-template-columns:1fr}.paine-slide .paine-regimes{padding:13px}.paine-slide .paine-regime{gap:12px}.paine-slide .paine-regime-symbol{width:150px;min-width:0;flex-basis:150px;padding:6px}}
 @media(max-width:660px){.paine-coverflow{padding-top:44px;margin-bottom:36px}.paine-coverflow-tabs{gap:6px}.paine-coverflow-tabs button{padding:8px;font-size:10px}.paine-coverflow-tabs button span{margin-left:3px}.paine-coverflow-stage .paine-slide{width:89%;padding:18px!important}.paine-coverflow-stage .paine-slide .paine-section-head h2{font-size:24px}.paine-slide .paine-prose p{font-size:12.5px}.paine-slide .paine-regime-pair{gap:12px}.tl-side-row{gap:5px;font-size:9.4px}.tl-lane-icon{width:17px;flex-basis:17px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){.paine-coverflow-stage,.paine-coverflow-stage .paine-slide{transition:none!important}}
 
@@ -244,3 +248,58 @@ html[data-theme="dark"] .tl-dialog[data-lane="research"]{--event-color:#d39bd5}
 html[data-theme="dark"] .tl-dialog[data-lane="exchange"]{--event-color:#91bee7}
 html[data-theme="dark"] .tl-dialog[data-lane="outreach"]{--event-color:#e0b979}
 html[data-theme="dark"] .tl-event-list-row.is-special,html[data-theme="dark"] .tl-dialog[data-lane="special"]{--entry-color:#8dd0b2;--event-color:#8dd0b2}
+
+/* v1.27.3: clarity-only sizing for the original, resolution-independent PAiNe graph SVGs. */
+@media (min-width:801px) and (max-width:1250px){.paine-regime-symbol{width:124px;min-width:108px;flex-basis:124px;padding:5px}}
+@media (max-width:660px){.paine-slide .paine-regime-symbol,.paine-coverflow-stage .paine-slide .paine-regime-symbol{width:104px;min-width:0;flex:0 0 104px;padding:5px}}
+@media (max-width:380px){.paine-slide .paine-regime-symbol,.paine-coverflow-stage .paine-slide .paine-regime-symbol{width:88px;flex-basis:88px;padding:4px}.paine-slide .paine-regime{gap:9px}}
+
+
+/* v1.27.5 — A single methodological journey, not another objective grid. */
+.paine-coverflow-stage .paine-slide .paine-method-intro{max-width:100%;margin-bottom:24px;line-height:1.72}
+.paine-method-route{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;isolation:isolate}
+.paine-method-route::before{content:"";position:absolute;left:14%;right:14%;top:21px;border-top:2px dashed color-mix(in srgb,var(--accent) 50%,var(--border));z-index:-1}
+.paine-method-stop{min-width:0;position:relative;text-align:center}
+.paine-method-checkpoint{display:flex;flex-direction:column;align-items:center;gap:7px;margin-bottom:12px}
+.paine-method-checkpoint>span{box-sizing:border-box;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);background:var(--panel);color:var(--accent-ink);font-family:'Manrope',sans-serif;font-size:17px;font-weight:850;box-shadow:0 0 0 6px var(--panel)}
+.paine-method-checkpoint small{font-size:9px;letter-spacing:1.4px;color:var(--accent-ink);font-weight:850}
+.paine-method-visual{box-sizing:border-box;height:156px;padding:13px 8px 10px;margin-bottom:13px;border-radius:11px;background:linear-gradient(165deg,var(--accent-soft),color-mix(in srgb,var(--accent-soft) 35%,var(--panel)));display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px}
+.paine-method-visual svg{display:block;width:100%;max-width:210px;height:110px;overflow:visible;stroke-linecap:round;stroke-linejoin:round}
+.paine-method-visual-note{font-size:8.2px;letter-spacing:1px;font-weight:800;white-space:nowrap;color:var(--accent-ink);line-height:1.2}
+.paine-method-visual-note span{padding:0 2px}
+.paine-method-stop h3{font-size:14px;letter-spacing:-.25px;line-height:1.4;margin:0 0 8px;font-weight:800}
+.paine-coverflow-stage .paine-slide .paine-method-stop p{font-size:11.8px;line-height:1.65;color:var(--muted);margin:0 auto;max-width:240px}
+.paine-method-lines{stroke:var(--muted);stroke-width:1.65;opacity:.58}
+.paine-method-pale{fill:var(--panel);stroke:var(--muted);stroke-width:1.5}
+.paine-method-hot{fill:var(--accent);stroke:var(--panel);stroke-width:1.5}
+.paine-method-signal{stroke:var(--accent);stroke-width:2.8}
+.paine-method-arrow{stroke:var(--accent-ink);stroke-width:2}
+.paine-method-soft-boundary{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:4 5;opacity:.52}
+.paine-method-axis{stroke:var(--muted);stroke-width:1.35;opacity:.55}
+.paine-method-distribution-neutral{fill:color-mix(in srgb,var(--muted) 13%,transparent)}
+.paine-method-distribution-signal{fill:color-mix(in srgb,var(--accent) 19%,transparent)}
+.paine-method-distribution-neutral-stroke{stroke:var(--muted);stroke-width:2.1;opacity:.8}
+.paine-method-distribution-signal-stroke{stroke:var(--accent);stroke-width:2.5}
+.paine-method-threshold{stroke:var(--accent-ink);stroke-width:1.6;stroke-dasharray:4 5;opacity:.72}
+.paine-method-threshold-dot{fill:var(--accent)}
+.paine-method-verification{fill:var(--accent);stroke:var(--panel);stroke-width:2}
+.paine-method-check{stroke:var(--panel);stroke-width:2.2}
+@media(max-width:800px){
+  .paine-coverflow-stage .paine-slide .paine-method-route{grid-template-columns:1fr;gap:13px}
+  .paine-method-route::before{top:22px;bottom:44px;left:21px;right:auto;border-top:0;border-left:2px dashed color-mix(in srgb,var(--accent) 50%,var(--border))}
+  .paine-method-stop{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:14px;align-items:start;text-align:left}
+  .paine-method-checkpoint{grid-column:1;grid-row:1 / 4;margin:0;gap:6px}
+  .paine-method-checkpoint>span{box-shadow:0 0 0 5px var(--panel)}
+  .paine-method-checkpoint small{font-size:8px;letter-spacing:.2px}
+  .paine-method-visual{grid-column:2;grid-row:1;height:117px;padding:5px 12px;margin:0 0 7px;align-items:center}
+  .paine-method-visual svg{height:88px;max-width:210px}
+  .paine-method-visual-note{font-size:7px}
+  .paine-method-stop h3{grid-column:2;grid-row:2;margin-bottom:4px;font-size:13px}
+  .paine-coverflow-stage .paine-slide .paine-method-stop p{grid-column:2;grid-row:3;max-width:none;margin:0;font-size:11.3px;line-height:1.5}
+  .paine-coverflow-stage .paine-slide .paine-method-intro{font-size:12px;line-height:1.6;margin-bottom:19px}
+}
+@media(max-width:420px){
+  .paine-method-visual{height:104px}
+  .paine-method-visual svg{height:75px}
+  .paine-method-route{gap:10px}
+}

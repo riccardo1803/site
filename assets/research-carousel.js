@@ -12,7 +12,7 @@
  const prev=document.getElementById('carousel-prev');
  const next=document.getElementById('carousel-next');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let position=0, timer, scrollTimer, loopTimer, visible=false, pointerInside=false, focused=false, dragging=false, moving=false, manualPauseUntil=0;
+ let position=0, timer, scrollTimer, loopTimer, visible=false, pointerInside=false, focused=false, dragging=false, moving=false;
  const interval=4000;
  const leftAt=(i)=>items[i].offsetLeft-items[0].offsetLeft;
  function leftFraction(value){const a=Math.floor(value),b=Math.min(total,a+1),t=value-a;return leftAt(a)*(1-t)+leftAt(b)*t}
@@ -24,9 +24,10 @@
    setTimeout(()=>{moving=false},smooth?790:100);
    if(n===total){loopTimer=setTimeout(()=>{position=0;viewport.scrollTo({left:0,behavior:'instant'});display(0);moving=false},930)}
  }
- function busy(){return !visible||document.hidden||reduced.matches||pointerInside||focused||dragging||Date.now()<manualPauseUntil}
+ function busy(){return !visible||document.hidden||reduced.matches||pointerInside||focused||dragging}
  function schedule(){clearInterval(timer);timer=null;if(busy())return;timer=setInterval(()=>{if(busy()){schedule();return}moveTo(position===total-1?total:position+1,true)},interval)}
- function manual(){manualPauseUntil=Date.now()+6500;schedule();setTimeout(schedule,6700)}
+ // Restart the normal four-second clock after an interaction, without stacking an extra pause.
+ function manual(){schedule()}
  prev.addEventListener('click',()=>{manual();moveTo(position===0?total-1:position-1,true)});
  next.addEventListener('click',()=>{manual();moveTo(position>=total-1?total:position+1,true)});
  scrubber.addEventListener('pointerdown',()=>{dragging=true;viewport.classList.add('is-scrubbing');manual()});
