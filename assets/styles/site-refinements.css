@@ -180,7 +180,7 @@ html[data-theme="dark"] .contact-profile-brand .contact-brand-icon[src$="github.
   font-weight:730;text-transform:uppercase;letter-spacing:.18px;}
 
 /* Publications — journals and other bibliographic venues bold italic. */
-.pub-record-venue{font-style:italic!important;font-weight:760!important;}
+.pub-record-venue{font-style:italic!important;font-weight:800!important;color:var(--text)!important;}
 
 
 /* v1.27.7 — future papers retain the same cover, meta, title and footer structure
@@ -193,7 +193,7 @@ html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
 .ip-article.placeholder .ip-future-title{font-size:19px;line-height:1.35;letter-spacing:-.55px;font-weight:700;color:var(--muted);margin:0 0 11px;overflow-wrap:break-word;}
 .ip-article.placeholder .ip-placeholder-spacer{flex:1;min-height:0;margin:0 0 22px;}
 .ip-article.placeholder .ip-article-actions{border-top:1px solid var(--line);padding-top:15px;}
-.ip-article.placeholder .ip-coming-soon{display:inline-flex;align-items:center;width:auto;height:auto;opacity:1;background:transparent;border-radius:0;font-size:12px;line-height:18px;font-weight:800;color:var(--subtle);}
+.ip-article.placeholder .ip-open-cta.ip-coming-soon{display:inline-flex;align-items:center;gap:9px;width:auto;height:auto;opacity:1;background:none;border-radius:0;font-size:12px;line-height:normal;font-weight:800;color:var(--subtle);}
 @media(max-width:1160px){.ip-article.placeholder .ip-future-title{font-size:17px;}}
 @media(max-width:690px){.ip-article.placeholder .ip-future-title{font-size:19px;}}
 /* A little extra room for the longer Simple example, without clipping math. */
@@ -201,6 +201,15 @@ html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
 .ip-mode .ip-example p{overflow-wrap:break-word;}
 .ip-mode .ip-clique-math{overflow-x:auto;}
 
+
+/* Ensure the placeholder label shares the exact available-paper CTA icon and rhythm. */
+.ip-article.placeholder .ip-open-cta .ip-cta-icon{display:inline-block;width:18px;height:18px;flex:0 0 18px;background-color:currentColor;}
+
+/* Catalog Research preview: equations are pre-rendered by MathJax/TeX as SVG. */
+.ip-mode.research .ip-math-tex-inline mjx-container{display:inline-block;vertical-align:middle;}
+.ip-mode.research .ip-math-tex-display{display:block;text-align:center;margin:5px auto;}
+.ip-mode.research .ip-math-tex-display mjx-container{display:inline-block;max-width:100%;} 
+.ip-mode.research .ip-math-tex-display svg{max-width:100%;height:auto;}
 
 /* About — three academic career stops remain in the existing timeline;
    BSc/MSc are grouped in a less visually dominant Education subsection. */
@@ -220,6 +229,43 @@ html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
 .about-education-years{font-size:11px;font-weight:650;white-space:nowrap;color:var(--subtle);
   font-variant-numeric:tabular-nums;}
 
+
+/* v1.27.8 — Academic Journey: consistent milestones, dates and education. */
+.about-timeline{padding:10px 30px 12px 31px;}
+.about-timeline .about-timeline-item{
+  position:relative;grid-template-columns:minmax(0,1fr) max-content;
+  align-items:center;column-gap:28px;padding:25px 0 25px 35px;
+}
+.about-timeline .about-timeline-item::before{
+  left:1px;top:50%;transform:translateY(-50%);
+  box-sizing:border-box;width:12px;height:12px;border-width:2px;z-index:2;
+}
+.about-timeline .about-timeline-item::after{
+  left:6px;top:calc(50% + 7px);bottom:calc(-50% + 5px);
+  width:1px;background:var(--border);
+}
+.about-timeline .about-timeline-item:nth-child(3)::after{display:none;}
+.about-timeline .about-timeline-item .about-journey-content{gap:16px;align-items:center;}
+.about-timeline .about-dates{font-size:12px;align-self:center;padding:0;color:var(--muted);}
+.about-timeline .about-education{
+  margin:0 0 2px 35px;padding:16px 0 4px 0;
+  border-top:1px solid var(--line);
+}
+.about-timeline .about-education-entry{padding:11px 0 12px;gap:22px;}
+.about-timeline .about-education-years{font-size:11.5px;}
+@media(max-width:630px){
+  .about-timeline{padding:5px 15px 13px;}
+  .about-timeline .about-timeline-item{
+    grid-template-columns:1fr;gap:10px;padding:23px 0 23px 27px;
+  }
+  .about-timeline .about-timeline-item::before{left:0;top:30px;transform:none;}
+  .about-timeline .about-timeline-item::after{left:5px;top:42px;bottom:-32px;}
+  .about-timeline .about-dates{grid-row:1;align-self:start;justify-self:start;font-size:10.5px;}
+  .about-timeline .about-timeline-item .about-journey-content{gap:11px;align-items:center;}
+  .about-timeline .about-education{margin:0 0 0 27px;padding:17px 0 0;}
+  .about-timeline .about-education-entry{gap:10px;}
+  .about-timeline .about-education-years{font-size:10.5px;}
+}
 
 @media(max-width:930px){
   /* Both placeholders remain visible even when the catalogue moves to two columns. */

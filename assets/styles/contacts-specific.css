@@ -31,8 +31,8 @@ html[data-theme="dark"] .nav-link .nav-special-icon{filter:none!important;}
 .contact-page h1{font-family:Manrope,'DM Sans',sans-serif;font-size:clamp(44px,5.7vw,69px);letter-spacing:-3px;line-height:1.07;margin:14px 0 19px}
 .contact-page h1 em{font-style:normal;color:var(--accent)}
 .contact-page .contact-lede{font-size:clamp(14px,1.55vw,17px);line-height:1.85;color:var(--muted);max-width:700px;margin:0 0 39px}
-.contact-panel{border-top:1px solid var(--border);padding:25px 0 29px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:23px}
-.contact-panel>h2{margin:0;font-size:10px;line-height:1.8;color:var(--subtle);letter-spacing:1.35px;text-transform:uppercase}
+.contact-panel{border-top:1px solid var(--border);padding:25px 0 29px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:23px}
+.contact-panel>h2{margin:0;font-family:Manrope,'DM Sans',sans-serif;font-size:18px;font-weight:800;line-height:1.4;color:var(--text);letter-spacing:-.45px;text-transform:none}
 .contact-panel-body{min-width:0}
 .contact-email-entry{display:flex;justify-content:space-between;align-items:center;gap:13px;padding:0 0 20px}
 .contact-email-entry+.contact-email-entry{border-top:1px solid var(--line);padding-top:20px}

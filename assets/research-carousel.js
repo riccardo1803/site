@@ -12,7 +12,7 @@
  const prev=document.getElementById('carousel-prev');
  const next=document.getElementById('carousel-next');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let position=0, timer, scrollTimer, loopTimer, visible=false, pointerInside=false, focused=false, dragging=false, moving=false;
+ let position=0, timer, scrollTimer, loopTimer, visible=false, focused=false, dragging=false, moving=false;
  const interval=4000;
  const leftAt=(i)=>items[i].offsetLeft-items[0].offsetLeft;
  function leftFraction(value){const a=Math.floor(value),b=Math.min(total,a+1),t=value-a;return leftAt(a)*(1-t)+leftAt(b)*t}
@@ -24,8 +24,10 @@
    setTimeout(()=>{moving=false},smooth?790:100);
    if(n===total){loopTimer=setTimeout(()=>{position=0;viewport.scrollTo({left:0,behavior:'instant'});display(0);moving=false},930)}
  }
- function busy(){return !visible||document.hidden||reduced.matches||pointerInside||focused||dragging}
+ function busy(){return !visible||document.hidden||focused||dragging}
  function schedule(){clearInterval(timer);timer=null;if(busy())return;timer=setInterval(()=>{if(busy()){schedule();return}moveTo(position===total-1?total:position+1,true)},interval)}
+ // Autoplay runs every four seconds while visible, including with the cursor hovering.
+ // Reduced-motion users get an instant step instead of a sliding animation.
  // Restart the normal four-second clock after an interaction, without stacking an extra pause.
  function manual(){schedule()}
  prev.addEventListener('click',()=>{manual();moveTo(position===0?total-1:position-1,true)});
@@ -34,8 +36,6 @@
  scrubber.addEventListener('input',()=>{dragging=true;viewport.classList.add('is-scrubbing');manual();const val=Number(scrubber.value);viewport.scrollTo({left:leftFraction(val),behavior:'instant'});display(val)});
  function settle(){if(!dragging)return;dragging=false;viewport.classList.remove('is-scrubbing');const n=Math.round(Number(scrubber.value));moveTo(n,true);manual();}
  scrubber.addEventListener('change',settle);scrubber.addEventListener('pointerup',settle);scrubber.addEventListener('pointercancel',settle);scrubber.addEventListener('keyup',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key))settle()});
- viewport.addEventListener('mouseenter',()=>{pointerInside=true;schedule()});
- viewport.addEventListener('mouseleave',()=>{pointerInside=false;schedule()});
  viewport.addEventListener('focusin',()=>{focused=true;schedule()});
  viewport.addEventListener('focusout',()=>{setTimeout(()=>{focused=viewport.contains(document.activeElement);schedule()},0)});
  viewport.addEventListener('pointerdown',()=>manual(),{passive:true});

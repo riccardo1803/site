@@ -78,8 +78,6 @@ html[data-theme='dark'] .ip-mode.research{--mode-bg:#352d25;--mode-border:#5d4f3
 .ip-placeholder-art{aspect-ratio:1.66;background:var(--sidebar);display:grid;place-items:center;color:var(--subtle);border-bottom:1px dashed var(--border)}
 .ip-placeholder-art svg{width:32px;height:32px;stroke:currentColor;stroke-width:1.15;fill:none;stroke-linecap:round}
 .ip-placeholder-copy{padding:18px;display:flex;flex-direction:column;gap:11px;flex:1}
-.ip-placeholder-copy span{display:block;width:65%;height:8px;background:var(--border);opacity:.8;border-radius:5px}
-.ip-placeholder-copy span:last-child{width:45%}
 .ip-placeholder-copy p{color:var(--subtle);font-size:11px;margin:auto 0 0;font-weight:600}
 .ip-footer-note{margin:24px 0 0;color:var(--subtle);font-size:12px;line-height:1.6}
 @media(max-width:1160px){.ip-article h3{font-size:17px}.ip-mode{padding:21px 19px}.ip-mode-desc{min-height:89px}}
