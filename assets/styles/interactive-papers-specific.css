@@ -100,10 +100,21 @@ html[data-theme="dark"] .nav-link .nav-special-icon{filter:none!important;}
 }
 
 /* v1.27.7 — TeX manuscript typography in the Research Mode preview only. */
-.ip-mode.research {font-family:"Latin Modern Roman","LMRoman10","CMU Serif","Computer Modern","STIX Two Text",Georgia,serif;font-kerning:normal;font-variant-ligatures:common-ligatures;}
+/* Default manuscript typography for every Research Mode preview, not for Simple Mode. */
+.ip-mode.research {
+  --ir-research-prose-font: "Latin Modern Roman","LMRoman10","CMU Serif","Computer Modern","STIX Two Text",Georgia,serif;
+  font-family:var(--ir-research-prose-font);
+  font-kerning:normal;
+  font-variant-ligatures:common-ligatures;
+}
 .ip-mode.research h3,.ip-mode.research .ip-example h4{font-family:inherit;letter-spacing:normal;font-weight:700;}
 .ip-mode.research .ip-mode-desc,.ip-mode.research .ip-example p{font-family:inherit;font-size:13px;line-height:1.68;}
 .ip-mode.research .ip-mode-sub{font-family:inherit;font-size:13px;}
 .ip-mode.research .ip-example-eyebrow{font-family:inherit;}
 .ip-mode.research math{font-family:"Latin Modern Math","STIX Two Math","Cambria Math",serif;}
 @media(max-width:690px){.ip-mode.research .ip-mode-desc,.ip-mode.research .ip-example p{font-size:12.5px;}}
+
+/* The Formalism: set equations on the paper itself, without the old ochre inset. */
+.ip-mode.research .ip-clique-definition{margin:13px auto 12px;max-width:100%;overflow-x:auto;}
+.ip-mode.research .ip-example .ip-math-explain{margin-top:0;text-align:left;}
+.ip-mode.research .ip-example .ip-math-explain mjx-container{vertical-align:middle;}

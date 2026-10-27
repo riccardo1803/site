@@ -140,13 +140,6 @@ html[data-theme="dark"] .contact-profile-brand .contact-brand-icon[src$="github.
 /* Mathematical example: a correct, planar K4 with precisely six edges. */
 .ip-clique-preview{max-width:195px;width:100%;height:auto;max-height:135px;margin:10px auto 0;overflow:visible;}
 .ip-graph-caption{text-align:center;margin:2px 0 0!important;color:var(--mode-muted);font-size:10.5px!important;}
-/* Native MathML displays the annotated LaTeX directly without external scripts or fonts. */
-.ip-clique-math{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:15px;
-  padding:15px 9px 13px;border-radius:7px;background:var(--mode-soft);color:var(--mode-ink);}
-.ip-clique-math math{font-size:clamp(18px,2vw,24px);max-width:100%;font-family:'Cambria Math','STIX Two Math','Latin Modern Math',serif;}
-.ip-clique-math math + .ip-math-explain{margin:0;font-size:10.5px;line-height:1.45;color:var(--mode-muted);text-align:center;}
-.ip-clique-math math:last-child{font-size:18px;}
-.ip-inline-math{font-size:1.05em;vertical-align:middle;}
 .ip-example p{line-height:1.65;}
 /* Entire Interactive Paper card, including Open, is one link, no DOI/details detours. */
 .ip-article-link{display:flex;flex:1;flex-direction:column;min-height:100%;color:inherit;text-decoration:none!important;}
@@ -155,7 +148,6 @@ html[data-theme="dark"] .contact-profile-brand .contact-brand-icon[src$="github.
 .ip-open-cta{display:inline-flex;align-items:center;gap:9px;color:var(--accent-ink);font-size:12px;font-weight:800;}
 .ip-cta-icon{width:18px;height:18px;flex:0 0 18px;}
 .ip-article-link:hover .ip-open-cta{text-decoration:underline;text-underline-offset:3px;}
-@media(max-width:430px){.ip-clique-math{padding:12px 4px;}.ip-clique-math math{font-size:18px;}}
 
 /* Home — hollow, softly rounded stars without any surrounding tile. */
 .publications-section .pub-star-item{
@@ -199,7 +191,6 @@ html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
 /* A little extra room for the longer Simple example, without clipping math. */
 .ip-mode .ip-example{min-height:246px;}
 .ip-mode .ip-example p{overflow-wrap:break-word;}
-.ip-mode .ip-clique-math{overflow-x:auto;}
 
 
 /* Ensure the placeholder label shares the exact available-paper CTA icon and rhythm. */
