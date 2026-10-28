@@ -1,56 +1,89 @@
 (function(){
  const viewport=document.getElementById('research-carousel');
  if(!viewport)return;
- const track=viewport.querySelector('.carousel-track');
- const originals=[...track.querySelectorAll('.interest-card')];
- const total=originals.length;
+ const carousel=viewport.closest('.research-carousel')||viewport;
+ const cards=[...viewport.querySelectorAll('.interest-card')];
+ const total=cards.length;
  if(!total)return;
- for(const card of originals){const clone=card.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.tabIndex=-1;clone.querySelectorAll('a,button,input,[tabindex]').forEach(x=>x.tabIndex=-1);track.appendChild(clone)}
- const items=[...track.querySelectorAll('.interest-card')];
- const scrubber=document.getElementById('carousel-scrubber');
- const label=document.getElementById('carousel-count');
  const prev=document.getElementById('carousel-prev');
  const next=document.getElementById('carousel-next');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let position=0, timer, scrollTimer, loopTimer, visible=false, focused=false, dragging=false, moving=false;
- const interval=4000;
- const leftAt=(i)=>items[i].offsetLeft-items[0].offsetLeft;
- function leftFraction(value){const a=Math.floor(value),b=Math.min(total,a+1),t=value-a;return leftAt(a)*(1-t)+leftAt(b)*t}
- function display(value){const v=Math.max(0,Math.min(total-1,value));scrubber.value=String(v);scrubber.style.setProperty('--fill',String(v/(total-1)*100)+'%');label.textContent=String(Math.round(v)+1).padStart(2,'0')+' / '+String(total).padStart(2,'0')}
- function moveTo(n,smooth=true){
-   clearTimeout(loopTimer);moving=true;position=n;
-   viewport.scrollTo({left:leftAt(n),behavior:smooth&&!reduced.matches?'smooth':'instant'});
-   display(n>=total?0:n);
-   setTimeout(()=>{moving=false},smooth?790:100);
-   if(n===total){loopTimer=setTimeout(()=>{position=0;viewport.scrollTo({left:0,behavior:'instant'});display(0);moving=false},930)}
+ let active=0,timer,visible=false,hovered=false,focused=false;
+ viewport.classList.add('is-3d-carousel');
+ const modulo=n=>(n%total+total)%total;
+
+ function measure(){
+   cards.forEach(card=>{card.style.height='auto'});
+   const height=Math.max(...cards.map(card=>Math.ceil(card.scrollHeight)));
+   viewport.style.height=height+'px';
+   cards.forEach(card=>{card.style.height=height+'px'});
+   positionCards();
  }
- function busy(){return !visible||document.hidden||focused||dragging}
- function schedule(){clearInterval(timer);timer=null;if(busy())return;timer=setInterval(()=>{if(busy()){schedule();return}moveTo(position===total-1?total:position+1,true)},interval)}
- // Autoplay runs every four seconds while visible, including with the cursor hovering.
- // Reduced-motion users get an instant step instead of a sliding animation.
- // Restart the normal four-second clock after an interaction, without stacking an extra pause.
- function manual(){schedule()}
- prev.addEventListener('click',()=>{manual();moveTo(position===0?total-1:position-1,true)});
- next.addEventListener('click',()=>{manual();moveTo(position>=total-1?total:position+1,true)});
- scrubber.addEventListener('pointerdown',()=>{dragging=true;viewport.classList.add('is-scrubbing');manual()});
- scrubber.addEventListener('input',()=>{dragging=true;viewport.classList.add('is-scrubbing');manual();const val=Number(scrubber.value);viewport.scrollTo({left:leftFraction(val),behavior:'instant'});display(val)});
- function settle(){if(!dragging)return;dragging=false;viewport.classList.remove('is-scrubbing');const n=Math.round(Number(scrubber.value));moveTo(n,true);manual();}
- scrubber.addEventListener('change',settle);scrubber.addEventListener('pointerup',settle);scrubber.addEventListener('pointercancel',settle);scrubber.addEventListener('keyup',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key))settle()});
- viewport.addEventListener('focusin',()=>{focused=true;schedule()});
- viewport.addEventListener('focusout',()=>{setTimeout(()=>{focused=viewport.contains(document.activeElement);schedule()},0)});
- viewport.addEventListener('pointerdown',()=>manual(),{passive:true});
- viewport.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>1)manual()},{passive:true});
- viewport.addEventListener('scroll',()=>{
-   clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{
-      if(moving||dragging)return;
-      let closest=0,distance=Infinity;
-      for(let i=0;i<items.length;i++){let d=Math.abs(viewport.scrollLeft-leftAt(i));if(d<distance){distance=d;closest=i}}
-      if(closest>=total){position=closest-total;viewport.scrollTo({left:leftAt(position),behavior:'instant'})}else position=closest;
-      display(position);manual();
-   },150)
+ function positionCards(){
+   const width=cards[active].getBoundingClientRect().width||viewport.clientWidth*.18;
+   cards.forEach((card,i)=>{
+     let distance=i-active;
+     const alternate=distance>0?distance-total:distance+total;
+     if(Math.abs(alternate)<Math.abs(distance))distance=alternate;
+     const neighbor=Math.abs(distance)===1;
+     const shown=Math.abs(distance)<=2;
+     card.classList.toggle('is-active',distance===0);
+     card.classList.toggle('is-neighbor',neighbor);
+     card.classList.toggle('is-distant',!shown);
+     card.style.zIndex=String(distance===0?2:neighbor?1:0);
+     const x=distance*viewport.clientWidth*.19;
+     const angle=distance===0?0:(distance<0?14:-14);
+     const transform=distance===0
+       ?'translateX(-50%)'
+       :`translateX(-50%) translate3d(${x}px,${neighbor?5:10}px,${neighbor?-45:-100}px) rotateY(${angle}deg) scale(${neighbor ? .94 : .88})`;
+     card.style.transform=reduced.matches&&distance!==0
+       ?`translateX(-50%) translateX(${x}px) scale(.92)`
+       :transform;
+     card.setAttribute('aria-hidden',String(distance!==0));
+     card.inert=distance!==0;
+   });
+ }
+ function render(){
+   positionCards();
+   carousel.classList.add('is-ready');
+ }
+ function busy(){return !visible||document.hidden||hovered||focused||reduced.matches}
+ function schedule(){
+   clearTimeout(timer);
+   timer=null;
+   if(busy()||total<2)return;
+   timer=setTimeout(()=>show(active+1),3000);
+ }
+ function show(index){
+   active=modulo(index);
+   render();
+   schedule();
+ }
+ prev.addEventListener('click',()=>show(active-1));
+ next.addEventListener('click',()=>show(active+1));
+ carousel.addEventListener('mouseenter',()=>{hovered=true;schedule()});
+ carousel.addEventListener('mouseleave',()=>{hovered=false;schedule()});
+ carousel.addEventListener('focusin',()=>{focused=true;schedule()});
+ carousel.addEventListener('focusout',()=>{
+   requestAnimationFrame(()=>{focused=carousel.contains(document.activeElement);schedule()});
+ });
+ carousel.addEventListener('keydown',event=>{
+   if(event.target.matches('input,textarea,select'))return;
+   if(event.key==='ArrowRight'){event.preventDefault();show(active+1)}
+   if(event.key==='ArrowLeft'){event.preventDefault();show(active-1)}
+ });
+ carousel.addEventListener('wheel',event=>{
+   if(Math.abs(event.deltaX)<15||Math.abs(event.deltaX)<Math.abs(event.deltaY))return;
+   show(active+(event.deltaX>0?1:-1));
  },{passive:true});
- reduced.addEventListener?.('change',schedule);
  document.addEventListener('visibilitychange',schedule);
- if('IntersectionObserver' in window){new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule()},{threshold:.15}).observe(viewport)}else{visible=true;schedule()}
- display(0);
+ reduced.addEventListener?.('change',()=>{positionCards();schedule()});
+ window.addEventListener('resize',()=>requestAnimationFrame(measure));
+ cards.forEach(card=>card.querySelector('img')?.addEventListener('load',measure,{once:true}));
+ if('IntersectionObserver' in window){
+   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule()},{threshold:.15}).observe(viewport);
+ }else visible=true;
+ measure();
+ render();
+ schedule();
 })();
