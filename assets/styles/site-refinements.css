@@ -179,7 +179,7 @@ html[data-theme="dark"] .contact-profile-brand .contact-brand-icon[src$="github.
    as the available card. Dashed outline and muted text still signal availability. */
 .ip-article.placeholder{border:2px dashed #a2aaa9!important;opacity:1;box-shadow:none;}
 html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
-.ip-article.placeholder .ip-placeholder-art{aspect-ratio:1.66;background:var(--sidebar);border-bottom:1px solid var(--border);}
+.ip-article.placeholder .ip-placeholder-art{aspect-ratio:1;background:var(--sidebar);border-bottom:1px solid var(--border);}
 .ip-article.placeholder .ip-placeholder-copy{padding:19px 18px 20px;display:flex;flex:1;flex-direction:column;gap:0;min-height:0;}
 .ip-article.placeholder .ip-article-meta{color:var(--subtle);margin:0 0 11px;font-size:10px;font-weight:800;letter-spacing:1.1px;}
 .ip-article.placeholder .ip-future-title{font-size:19px;line-height:1.35;letter-spacing:-.55px;font-weight:700;color:var(--muted);margin:0 0 11px;overflow-wrap:break-word;}
@@ -274,6 +274,5 @@ html[data-theme="dark"] .ip-article.placeholder{border-color:#74817f!important;}
   .about-education-entry{gap:8px;}
   .about-education-entry h4{font-size:12.6px;}
   .ip-article.placeholder .ip-placeholder-copy{display:flex!important;min-height:0;}
-  .ip-article.placeholder .ip-placeholder-art{aspect-ratio:1.66;}
   .ip-mode .ip-example{min-height:0;}
 }
